@@ -1,3 +1,6 @@
 .nav-button {
-  background-color: aqua;
+  margin-right: 10px;
+  width: 100px;
+  height: 45px;
+  color: white;
 }

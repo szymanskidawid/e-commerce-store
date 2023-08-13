@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+
 
 const NavButton = ({ text, onClick }) => {
   return (
-    <button onClick={onClick}
-    className="nav-button">
+    <Button onClick={onClick}
+    variant='contained'
+    className='nav-button'>
       {text}
-    </button>
+    </Button>
   );
 }
 

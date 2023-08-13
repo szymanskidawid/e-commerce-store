@@ -1,5 +1,33 @@
 .product-card-container {
+  padding: 5px;
   width: 300px;
   height: 200px;
   background-color: green;
+  display: grid;
+  grid-template-rows: 1fr 5fr 2fr;
+}
+
+.product-card-name,
+.product-card-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  background-color: aqua;
+}
+
+.product-card-picture {
+  background-color:chocolate;
+}
+
+.product-card-bottom {
+  padding: 5px;
+  background-color:cyan;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+
+.product-card-price {
+  background-color:deeppink;
 }

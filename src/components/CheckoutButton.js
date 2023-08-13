@@ -1,20 +1,17 @@
 import PropTypes from 'prop-types';
 
-const CheckoutButton = ({ text, onClick }) => {
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+const CheckoutButton = ({ onClick }) => {
   return (
-    <button onClick={onClick}
-    className="checkout-button">
-      {text}
-    </button>
+    <div onClick={onClick}
+    className='checkout-button'>
+      <ShoppingCartIcon style={{ fontSize: 45, color: 'white' }} />
+    </div>
   );
 }
 
-CheckoutButton.defaultProps = {
-  text: 'CheckoutBtn'
-}
-
 CheckoutButton.propTypes = {
-  text: PropTypes.string,
   onClick: PropTypes.func
 }
 
