@@ -1,3 +1,5 @@
+// Footer section containing Copyright.
+
 const Footer = () => {
   return (
     <footer>

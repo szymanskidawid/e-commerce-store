@@ -1,5 +1,7 @@
 import ProductButton from "./ProductButton";
 
+// Container with product information and button that adds to the basket.
+
 const ProductCard = () => {
   return (
     <div className='product-card-container'>

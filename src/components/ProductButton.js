@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 
+// Button used to add a product to the basket.
+
 const ProductButton = ({ text, onClick }) => {
   return (
     <Button onClick={onClick}

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+// This button allows to toggle BasketGrid.
 
 const CheckoutButton = ({ onClick }) => {
   return (
