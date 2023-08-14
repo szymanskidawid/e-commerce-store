@@ -5,6 +5,7 @@ import './styles/Header.css';
 import './styles/Logo.css';
 import './styles/NavButton.css';
 import './styles/CheckoutButton.css';
+import './styles/LightDarkButton.css';
 import './styles/ProductGrid.css';
 import './styles/ProductCard.css';
 import './styles/ProductButton.css';
