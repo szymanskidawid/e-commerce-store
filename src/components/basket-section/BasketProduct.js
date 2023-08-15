@@ -1,3 +1,5 @@
+import MainButton from "../buttons/MainButton";
+
 const BasketProduct = () => {
   return (
     <div className='basket-product-container'>
@@ -16,9 +18,9 @@ const BasketProduct = () => {
         </div>
       </div>
       <div className='basket-product-remove-container'>
-        <div className="basket-product-remove-button">
-          Button
-        </div>
+        <MainButton className={"basket-section-remove-button"}
+        color={'error'} 
+        text={'Remove'}/>
       </div>
     </div>
   );

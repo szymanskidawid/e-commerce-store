@@ -1,0 +1,15 @@
+.nav-section-products-button {
+  margin-right: 10px;
+  width: 150px;
+  height: 45px;
+  color: white;
+}
+
+.basket-section-remove-button {
+  width: calc(100% - 10px);
+  height: 50%;
+}
+
+.basket-section-purchase-button {
+  margin-left: 20px;
+}

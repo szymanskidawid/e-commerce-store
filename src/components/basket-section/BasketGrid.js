@@ -1,5 +1,6 @@
 // Container displaying items added to the basket.
 
+import MainButton from "../buttons/MainButton";
 import BasketProduct from "./BasketProduct";
 
 const BasketGrid = () => {
@@ -19,9 +20,9 @@ const BasketGrid = () => {
         <div className="basket-bottom-price">
           Price
         </div>
-        <div className="basket-bottom-buy-button">
-          Buy
-        </div>
+        <MainButton className={"basket-section-purchase-button"}
+        color={'success'} 
+        text={'Purchase'}/>
       </div>
     </section>
   );

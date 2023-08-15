@@ -1,4 +1,4 @@
-import ProductButton from "./ProductButton";
+import MainButton from "../buttons/MainButton";
 
 // Container with product information and button that adds to the basket.
 
@@ -15,7 +15,7 @@ const ProductCard = () => {
         <div className='product-card-price'>
           5,50zł
         </div>
-        <ProductButton text='Add to Cart' />
+        <MainButton color={'success'} text={'Add to Cart'}/>
       </div>
     </div>
   );

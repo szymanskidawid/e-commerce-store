@@ -1,7 +1,7 @@
 import Logo from "./Logo";
-import NavButton from "./NavButton";
-import CheckoutButton from "./CheckoutButton";
-import LightDarkButton from "./LightDarkButton";
+import MainButton from "../buttons/MainButton";
+import CheckoutButton from "../buttons/CheckoutButton";
+import LightDarkButton from "../buttons/LightDarkButton";
 
 // Header component containing logo and buttons.
 
@@ -11,7 +11,8 @@ const Header = ({toggleCheckout}) => {
       <header className='header-container'>
         <Logo />
         <nav className='nav-container'>
-          <NavButton text='Products' />
+          <MainButton className={"nav-section-products-button"}
+          text={'Products'}/>
           <CheckoutButton onClick={toggleCheckout}/>
           <LightDarkButton />
         </nav>
