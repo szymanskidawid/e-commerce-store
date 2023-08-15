@@ -1,0 +1,19 @@
+section {
+  margin: 90px 20px 20px 20px;
+  padding: 20px;
+  min-height: 80vh;
+  background-color: cornflowerblue;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.scrolling-window {
+  margin: 50px;
+  height: 500px;
+  overflow-y: scroll;
+  border: 2px solid black;
+}
+
+.basket-scrolling-container {
+  width: 100%;
+}
