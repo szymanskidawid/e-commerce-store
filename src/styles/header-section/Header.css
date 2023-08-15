@@ -13,11 +13,17 @@
 }
 
 .nav-container {
-  margin-right: 30px;
-  width: 400px;
+  margin-right: 2vw;
+  width: 40vw;
   height: 60px;
   background-color: blue;
   display: flex;
   align-items: center;
   justify-content: space-around
+}
+
+@media screen and (max-width: 800px) {
+  .nav-container {
+    width: 60vw;
+  }
 }
