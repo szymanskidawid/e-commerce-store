@@ -1,11 +1,18 @@
 // Container displaying items added to the basket.
 
+import BasketProduct from "./BasketProduct";
+
 const BasketGrid = () => {
   return (
     <section >
       <div className='scrolling-window'>
         <div className='basket-scrolling-container'>
-          Basket
+          <BasketProduct />
+          <BasketProduct />
+          <BasketProduct />
+          <BasketProduct />
+          <BasketProduct />
+          <BasketProduct />
         </div>
         <div className="basket-info-container">
 

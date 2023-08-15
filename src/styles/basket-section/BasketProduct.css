@@ -1,0 +1,52 @@
+.basket-product-container {
+  margin: 10px 10px 5px 10px;
+  width: 95%;
+  height: 100px;
+  border: 1px solid black;
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+}
+
+.basket-product-picture {
+  height: 100px;
+  width: 200px;
+  background-color: aqua;
+}
+
+.basket-product-info {
+  height: 100px;
+  width: 100%;
+  background-color: red;
+  display: grid;
+  grid-template-columns: 4fr 1fr 2fr;
+  align-items: center;
+  text-align: center;
+}
+
+.basket-product-name {
+  background-color: blueviolet;
+}
+
+.basket-product-quantity {
+  background-color: cadetblue;
+}
+
+.basket-product-price {
+  background-color: darkgreen;
+}
+.basket-product-remove-container {
+  height: 100px;
+  width: 100px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-product-remove-button {
+  margin: 5px;
+  width: 100%;
+  height: 50%;
+  background-color: pink;
+}
