@@ -10,6 +10,7 @@ import './styles/main-section/ProductGrid.css';
 import './styles/main-section/ProductCard.css';
 import './styles/main-section/ProductButton.css';
 import './styles/basket-section/BasketGrid.css';
+import './styles/basket-section/BasketProduct.css';
 import './styles/Footer.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
