@@ -5,7 +5,26 @@ main {
   background-color: purple;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   row-gap: 50px;
   justify-items: center;
+}
+
+/* Responsive Web Design */
+
+@media screen and (max-width: 1650px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
