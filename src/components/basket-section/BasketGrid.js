@@ -14,8 +14,13 @@ const BasketGrid = () => {
           <BasketProduct />
           <BasketProduct />
         </div>
-        <div className="basket-info-container">
-
+      </div>
+      <div className="basket-bottom-container">
+        <div className="basket-bottom-price">
+          Price
+        </div>
+        <div className="basket-bottom-buy-button">
+          Buy
         </div>
       </div>
     </section>

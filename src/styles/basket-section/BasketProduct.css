@@ -1,7 +1,6 @@
 .basket-product-container {
   margin: 10px 10px 5px 10px;
   width: 95%;
-  height: 100px;
   border: 1px solid black;
   background-color: orange;
   display: flex;
@@ -15,8 +14,8 @@
 }
 
 .basket-product-info {
+  flex: 1;
   height: 100px;
-  width: 100%;
   background-color: red;
   display: grid;
   grid-template-columns: 4fr 1fr 2fr;
@@ -49,4 +48,22 @@
   width: 100%;
   height: 50%;
   background-color: pink;
+}
+
+/* Responsive Web Design */
+
+@media screen and (max-width: 850px) {
+  .basket-product-picture {
+    width: 100px;
+    height: 50px;
+  }
+
+  .basket-product-info {
+    height: 50px;
+  }
+
+  .basket-product-remove-container {
+    width: 50px;
+    height: 50px;
+  }
 }
