@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
-import ProductGrid from "./components/ProductGrid";
-import BasketGrid from "./components/BasketGrid";
+import Header from "./components/header-section/Header";
+import ProductGrid from "./components/main-section/ProductGrid";
+import BasketGrid from "./components/basket-section/BasketGrid";
 
 function App() {
   //Below displays the basket.
