@@ -15,7 +15,9 @@ const ProductCard = () => {
         <div className='product-card-price'>
           5,50zł
         </div>
-        <MainButton color={'success'} text={'Add to Cart'}/>
+        <MainButton className={'product-section-add-button'}
+        color={'success'} 
+        text={'Add to Cart'} />
       </div>
     </div>
   );

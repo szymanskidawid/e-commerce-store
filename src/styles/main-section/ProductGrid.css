@@ -2,7 +2,7 @@ main {
   margin: 5em 1em 1em 1em;
   padding: 1em;
   min-height: 80vh;
-  width: calc(100vw - 2em);
+  width: calc(100vw - 4em);
   background-color: purple;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -27,5 +27,11 @@ main {
 @media screen and (max-width: 1000px) {
   main {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    font-size: 0.6em;
   }
 }

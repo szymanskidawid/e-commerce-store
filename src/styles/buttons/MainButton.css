@@ -12,3 +12,11 @@
 .basket-section-purchase-button {
   margin-left: 2em;
 }
+
+/* Responsive Web Design */
+
+@media screen and (max-width: 640px) {
+  .product-section-add-button {
+    font-size: 0.6em !important;
+  }
+}
