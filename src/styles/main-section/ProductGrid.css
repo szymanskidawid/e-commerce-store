@@ -1,12 +1,12 @@
 main {
-  margin: 80px 10px 10px 10px;
-  padding: 10px;
+  margin: 5em 1em 1em 1em;
+  padding: 1em;
   min-height: 80vh;
-  width: calc(100vw - 40px);
+  width: calc(100vw - 2em);
   background-color: purple;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 30px;
+  row-gap: 3em;
   justify-items: center;
 }
 

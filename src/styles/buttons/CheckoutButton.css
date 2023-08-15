@@ -1,6 +1,7 @@
 .checkout-button {
-  width: 45px;
-  height: 45px;
+  width: 20%;
+  height: 75%;
   border: 2px solid black;
   border-radius: 10px;
+  text-align: center;
 }

@@ -27,11 +27,11 @@
 }
 
 .product-card-bottom {
-  padding: 5px;
+  padding: 0.3em;
   background-color:cyan;
   display: grid; 
   grid-template-columns: 0.8fr 1.2fr;
-  column-gap: 5px;
+  column-gap: 0.5em;
 }
 
 .product-card-price {
@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 640px) {
   .product-card-container {
-    width: 250px;
+    width: 90%;
     height: 175px;
   }
 }
