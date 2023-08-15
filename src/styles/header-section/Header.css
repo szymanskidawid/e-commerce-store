@@ -22,8 +22,8 @@
   justify-content: space-around
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .nav-container {
-    width: 60vw;
+    width: 50vw;
   }
 }
