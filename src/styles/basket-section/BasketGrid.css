@@ -2,7 +2,7 @@ section {
   margin: 80px 10px 10px 10px;
   padding: 10px;
   min-height: 80vh;
-  width: calc(100% - 40px);
+  width: calc(100vw - 40px);
   background-color: cornflowerblue;
 }
 
@@ -32,11 +32,6 @@ section {
 .basket-bottom-price {
   margin-right: 20px;
  background-color: aliceblue;
-}
-
-.basket-bottom-buy-button {
-  margin-left: 20px;
-  background-color: aquamarine;
 }
 
 /* Responsive Web Design */
