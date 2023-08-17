@@ -1,0 +1,11 @@
+.basket-section-remove-button {
+  font-size: 4em !important; 
+  color: red !important;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .basket-section-remove-button {
+    font-size: 2em !important; 
+  }
+}
