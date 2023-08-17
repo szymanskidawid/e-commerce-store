@@ -1,12 +1,12 @@
 main {
-  margin: 5em 1em 1em 1em;
-  padding: 1em;
+  margin: 5rem 1rem 1rem 1rem;
+  padding: 1rem;
   min-height: 80vh;
-  width: calc(100vw - 4em);
+  width: calc(100vw - 4rem);
   background-color: purple;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 3em;
+  row-gap: 3rem;
   justify-items: center;
 }
 
@@ -32,6 +32,6 @@ main {
 
 @media screen and (max-width: 640px) {
   main {
-    font-size: 0.6em;
+    font-size: 0.6rem;
   }
 }

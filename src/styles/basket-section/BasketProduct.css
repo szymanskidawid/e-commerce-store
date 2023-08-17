@@ -1,21 +1,27 @@
 .basket-product-container {
-  margin: 10px 10px 5px 10px;
-  width: calc(100% - 20px);
-  border: 1px solid black;
+  margin: 1em 1em 0.5em 1em;
+  width: calc(100% - 2em);
+  border: 0.1em solid black;
   background-color: orange;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .basket-product-picture {
-  height: 100px;
-  width: 240px;
+  height: 100%;
+  width: 15%;
   background-color: aqua;
+}
+
+.basket-product-picture img {
+  height: 100%;
+  width: 100%;
 }
 
 .basket-product-info {
   flex: 1;
-  height: 100px;
+  height: 100%;
   background-color: red;
   display: grid;
   grid-template-columns: 4fr 1fr 2fr;
@@ -36,8 +42,8 @@
 }
 
 .basket-product-remove-container {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 10%;
   background-color: gray;
   display: flex;
   align-items: center;
@@ -47,17 +53,5 @@
 /* Responsive Web Design */
 
 @media screen and (max-width: 1000px) {
-  .basket-product-picture {
-    width: 120px;
-    height: 50px;
-  }
 
-  .basket-product-info {
-    height: 50px;
-  }
-
-  .basket-product-remove-container {
-    width: 75px;
-    height: 75px;
-  }
 }

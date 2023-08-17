@@ -30,7 +30,7 @@
 }
 
 .product-card-bottom {
-  padding: 0.2em;
+  padding: 0.1em;
   background-color:cyan;
   display: grid; 
   grid-template-columns: 0.8fr 1.2fr;

@@ -1,7 +1,9 @@
 .website-logo {
-  margin-left: 2vw;
-  height: 6vh;
-  width: 15vw;
+  margin-left: 2%;
+  height: 80%;
+  width: 15%;
+  display: flex;
+  align-items: center;
   background-color: chartreuse;
 }
 
