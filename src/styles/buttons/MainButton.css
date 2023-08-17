@@ -1,22 +1,20 @@
 .nav-section-products-button {
   width: 40%;
   height: 75%;
-  color: white;
-}
-
-.basket-section-remove-button {
-  width: calc(100% - 10px);
-  height: 50%;
+  font-size: 1.5rem !important;
 }
 
 .basket-section-purchase-button {
-  margin-left: 2em;
+  margin-left: 2%;
 }
 
 /* Responsive Web Design */
 
 @media screen and (max-width: 640px) {
+  .nav-section-products-button {
+    font-size: 1em !important;
+  }
   .product-section-add-button {
-    font-size: 0.6em !important;
+    font-size: 0.75em !important;
   }
 }
