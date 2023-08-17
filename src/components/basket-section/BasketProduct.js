@@ -1,4 +1,5 @@
 import MainButton from "../buttons/MainButton";
+import RemoveButton from "../buttons/RemoveButton";
 
 const BasketProduct = () => {
   return (
@@ -18,9 +19,10 @@ const BasketProduct = () => {
         </div>
       </div>
       <div className='basket-product-remove-container'>
-        <MainButton className={"basket-section-remove-button"}
+        {/*<MainButton className={"basket-section-remove-button"}
         color={'error'} 
-        text={'Remove'}/>
+        text={'Remove'}/>*/}
+        <RemoveButton />
       </div>
     </div>
   );
