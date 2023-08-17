@@ -3,7 +3,7 @@
   height: 200px;
   border: 2px solid black;
   border-radius: 2px;
-  background-color: green;
+  /* background-color: green; */
   display: grid;
   grid-template-rows: 1fr 5fr 2fr;
 }
@@ -14,11 +14,11 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .product-card-picture {
-  background-color:chocolate;
+  /* background-color:chocolate; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,21 +31,21 @@
 
 .product-card-bottom {
   padding: 0.1em;
-  background-color:cyan;
+  /* background-color:cyan; */
   display: grid; 
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 0.5em;
 }
 
 .product-card-price {
-  background-color:deeppink;
+  background-color: lightblue; 
 }
 
 /* Responsive Web Design */
 
 @media screen and (max-width: 640px) {
   .product-card-container {
-    width: 84%;
+    width: 85%;
     height: 100px;
     grid-template-rows: 1fr 5fr 2fr;
   }

@@ -5,7 +5,9 @@
 }
 
 .basket-section-purchase-button {
-  margin-left: 2%;
+  width: 10%;
+  height: 100%;
+  margin-left: 2em;
 }
 
 /* Responsive Web Design */
@@ -15,6 +17,10 @@
     font-size: 1em !important;
   }
   .product-section-add-button {
-    font-size: 0.75em !important;
+    font-size: 0.7em !important;
   }
+
+  .basket-section-purchase-button {
+  width: 25%;
+}
 }
