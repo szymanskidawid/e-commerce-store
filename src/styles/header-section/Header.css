@@ -2,7 +2,8 @@
   width: 100vw;
   height: 7vh;
   border-bottom: 0.1rem solid black;
-  background-color: red;
+  /* background-color: red; */
+  background-color: rgb(235, 235, 229);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +17,7 @@
   margin-right: 2%;
   width: 40%;
   height: 100%;
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   align-items: center;
   justify-content: space-around
