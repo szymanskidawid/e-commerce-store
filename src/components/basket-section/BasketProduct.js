@@ -1,11 +1,10 @@
-import MainButton from "../buttons/MainButton";
 import RemoveButton from "../buttons/RemoveButton";
 
 const BasketProduct = () => {
   return (
     <div className='basket-product-container'>
       <div className='basket-product-picture'>
-        Picture
+        <img src="https://picsum.photos/150/40" />
       </div>
       <div className='basket-product-info'>
         <div className="basket-product-name">
@@ -19,9 +18,6 @@ const BasketProduct = () => {
         </div>
       </div>
       <div className='basket-product-remove-container'>
-        {/*<MainButton className={"basket-section-remove-button"}
-        color={'error'} 
-        text={'Remove'}/>*/}
         <RemoveButton />
       </div>
     </div>
