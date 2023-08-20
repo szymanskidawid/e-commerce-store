@@ -9,5 +9,10 @@
 
 body {
   color: black;
-  background-color: rgb(235, 235, 229);
+  background-color: var(--color-light);
+}
+
+.body-dark-theme {
+  color: white;
+  background-color: var(--color-dark);
 }
