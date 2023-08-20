@@ -34,8 +34,20 @@
   /* background-color: blueviolet; */
 }
 
-.basket-product-quantity {
+.basket-product-quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background-color: cadetblue; */
+}
+
+.basket-product-quantity-buttons {
+  font-size: 90% !important;
+}
+
+.basket-product-quantity-number {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .basket-product-price {
