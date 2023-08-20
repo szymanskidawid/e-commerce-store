@@ -7,19 +7,24 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const LightDarkButton = ({ color, onClick }) => {
   //Below is used to cycle icons between sun and moon.
-  const [isLightMode, setIsLightMode] = useState(false)
+  const [buttonMode, setButtonMode] = useState(false)
 
-  const toggleColorMode = () => {
-    setIsLightMode(previousMode => !previousMode);
+  const toggleButtonIcon = () => {
+    setButtonMode(previousMode => !previousMode);
+  }
+
+  //Function to combine above function and onClick func passed as prop.
+  const buttonClick = () => {
+    toggleButtonIcon()
+    onClick()
   }
 
   return (
-
     <Button className='light-dark-mode-button'
     variant='contained'
     color={color}
-    onClick={toggleColorMode}>
-      {isLightMode ? (
+    onClick={buttonClick}>
+      {buttonMode ? (
         <LightModeIcon style={{ fontSize: 45, color: 'white' }} />
       ) : (
         <DarkModeIcon style={{ fontSize: 45, color: 'black' }} />
