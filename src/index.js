@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import './styles/header-section/Header.css';
 import './styles/header-section/Logo.css';
 import './styles/buttons/CheckoutButton.css';
@@ -12,6 +11,8 @@ import './styles/basket-section/BasketGrid.css';
 import './styles/basket-section/BasketProduct.css';
 import './styles/buttons/MainButton.css';
 import './styles/Footer.css';
+import './styles/Variables.css';
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
