@@ -1,9 +1,7 @@
-.header-container {
+header {
   width: 100vw;
-  height: 7vh;
-  border-bottom: 0.1rem solid black;
+  height: 60px;
   /* background-color: red; */
-  background-color: rgb(235, 235, 229);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,6 +9,14 @@
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+.header-light-theme {
+  border-bottom: 0.1rem solid black;
+}
+
+.header-dark-theme {
+  border-bottom: 0.1rem solid white;
 }
 
 .nav-container {

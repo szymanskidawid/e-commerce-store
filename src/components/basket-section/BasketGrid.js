@@ -3,17 +3,17 @@
 import MainButton from "../buttons/MainButton";
 import BasketProduct from "./BasketProduct";
 
-const BasketGrid = () => {
+const BasketGrid = ({ darkMode }) => {
   return (
     <section >
       <div className='scrolling-window'>
         <div className='basket-scrolling-container'>
-          <BasketProduct />
-          <BasketProduct />
-          <BasketProduct />
-          <BasketProduct />
-          <BasketProduct />
-          <BasketProduct />
+          <BasketProduct darkMode={darkMode} />
+          <BasketProduct darkMode={darkMode} />
+          <BasketProduct darkMode={darkMode} />
+          <BasketProduct darkMode={darkMode} />
+          <BasketProduct darkMode={darkMode} />
+          <BasketProduct darkMode={darkMode} />
         </div>
       </div>
       <div className="basket-bottom-container">

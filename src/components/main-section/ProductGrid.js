@@ -2,29 +2,29 @@ import ProductCard from "./ProductCard";
 
 // Container displaying items available to purchase.
 
-const ProductGrid = () => {
+const ProductGrid = ({ darkMode }) => {
   return (
     <main>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
+      <ProductCard darkMode={darkMode} />
     </main>
   );
 }

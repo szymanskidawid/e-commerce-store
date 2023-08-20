@@ -2,9 +2,11 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveButton from "../buttons/RemoveButton";
 
-const BasketProduct = () => {
+const BasketProduct = ({ darkMode }) => {
   return (
-    <div className='basket-product-container'>
+    <div className={darkMode 
+      ? 'basket-product-container basket-product-container-dark-theme' 
+      : 'basket-product-container basket-product-container-light-theme'}>
       <div className='basket-product-picture'>
         <img src="https://picsum.photos/150/40" />
       </div>

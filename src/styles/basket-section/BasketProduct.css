@@ -2,11 +2,18 @@
   margin: 1em 1em 0.5em 1em;
   width: calc(100% - 2em);
   font-size: 1.5em;
-  border: 0.1em solid black;
   /* background-color: orange; */
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.basket-product-container-light-theme {
+  border: 0.1em solid black;
+}
+
+.basket-product-container-dark-theme {
+  border: 0.1em solid white;
 }
 
 .basket-product-picture {

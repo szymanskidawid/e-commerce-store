@@ -5,16 +5,18 @@ import LightDarkButton from "../buttons/LightDarkButton";
 
 // Header component containing logo and buttons.
 
-const Header = ({toggleCheckout}) => {
+const Header = ({ toggleCheckout, colorMode, darkMode }) => {
   return (
     <div>
-      <header className='header-container'>
+      <header className={darkMode 
+      ? 'header-dark-theme' 
+      : 'header-light-theme'}>
         <Logo />
         <nav className='nav-container'>
           <MainButton className={"nav-section-products-button"}
           text={'Products'}/>
           <CheckoutButton onClick={toggleCheckout}/>
-          <LightDarkButton />
+          <LightDarkButton onClick={colorMode}/>
         </nav>
       </header>
     </div>
