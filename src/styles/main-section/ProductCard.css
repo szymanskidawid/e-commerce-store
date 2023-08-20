@@ -46,7 +46,7 @@
 @media screen and (max-width: 640px) {
   .product-card-container {
     width: 85%;
-    height: 100px;
+    height: auto;
     grid-template-rows: 1fr 5fr 2fr;
   }
 }
