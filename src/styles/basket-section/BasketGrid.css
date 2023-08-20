@@ -2,7 +2,7 @@ section {
   margin: 4rem 0.5rem 0.5rem 0.5rem;
   padding: 1rem;
   min-height: 80vh;
-  width: calc(100vw - 2rem);
+  width: calc(100vw - 3rem);
   /*background-color: cornflowerblue;*/
 }
 
@@ -27,11 +27,12 @@ section {
 .basket-bottom-price {
   width: 10%;
   height: 100%;
-  margin-right: 2em;
+  margin-right: 1em;
+  font-size: 1.5em;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: lightblue; 
+  justify-content: flex-end;
+  /* background-color: lightblue; */
 }
 
 /* Responsive Web Design */
