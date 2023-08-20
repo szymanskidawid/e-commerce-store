@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/e-commerce-store/static/css/main.e9fcb386.css",
-    "main.js": "/e-commerce-store/static/js/main.0b43ffe1.js",
+    "main.css": "/e-commerce-store/static/css/main.7ef64892.css",
+    "main.js": "/e-commerce-store/static/js/main.06090851.js",
     "static/js/787.665b8f74.chunk.js": "/e-commerce-store/static/js/787.665b8f74.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "/e-commerce-store/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/e-commerce-store/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -60,12 +60,12 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/e-commerce-store/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/e-commerce-store/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/e-commerce-store/index.html",
-    "main.e9fcb386.css.map": "/e-commerce-store/static/css/main.e9fcb386.css.map",
-    "main.0b43ffe1.js.map": "/e-commerce-store/static/js/main.0b43ffe1.js.map",
+    "main.7ef64892.css.map": "/e-commerce-store/static/css/main.7ef64892.css.map",
+    "main.06090851.js.map": "/e-commerce-store/static/js/main.06090851.js.map",
     "787.665b8f74.chunk.js.map": "/e-commerce-store/static/js/787.665b8f74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9fcb386.css",
-    "static/js/main.0b43ffe1.js"
+    "static/css/main.7ef64892.css",
+    "static/js/main.06090851.js"
   ]
 }
