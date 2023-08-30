@@ -1,13 +1,12 @@
 .nav-section-products-button {
-  width: 40%;
+  width: auto;
   height: 75%;
-  font-size: 1.5rem !important;
+  font-size: 1.5em !important;
 }
 
 .basket-section-purchase-button {
   width: auto;
   height: 100%;
-  margin-left: 1em;
   font-size: 1.2rem !important;
 }
 

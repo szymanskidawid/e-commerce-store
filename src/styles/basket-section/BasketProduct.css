@@ -1,8 +1,8 @@
 .basket-product-container {
-  margin: 1em 1em 0.5em 1em;
+  margin: 1em 1em 1em 1em;
   width: calc(100% - 2em);
   font-size: 1.5em;
-  /* background-color: orange; */
+  /*background-color: orange;*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,8 +18,10 @@
 
 .basket-product-picture {
   height: 100%;
-  width: 20%;
-  /* background-color: aqua; */
+  width: auto;
+  /*background-color: aqua;*/
+  display: flex;
+  align-items: center;
 }
 
 .basket-product-picture img {

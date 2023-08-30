@@ -8,7 +8,7 @@ const BasketProduct = ({ darkMode }) => {
       ? 'basket-product-container basket-product-container-dark-theme' 
       : 'basket-product-container basket-product-container-light-theme'}>
       <div className='basket-product-picture'>
-        <img src="https://picsum.photos/150/40" />
+        <img src="https://picsum.photos/150/62" />
       </div>
       <div className='basket-product-info'>
         <div className="basket-product-name">
