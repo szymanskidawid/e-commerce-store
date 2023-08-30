@@ -39,7 +39,8 @@ function App() {
       <Header toggleCheckout={toggleCheckout}
       colorMode={colorMode}
       darkMode={darkMode} />
-      {checkoutMode ? <BasketGrid darkMode={darkMode} /> : <ProductGrid darkMode={darkMode} />}
+      {checkoutMode ? <BasketGrid basketTotal="50.00" darkMode={darkMode} /> 
+      : <ProductGrid darkMode={darkMode} />}
       <Footer darkMode={darkMode} />
     </div>
   );
