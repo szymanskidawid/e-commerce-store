@@ -11,14 +11,6 @@ header {
   z-index: 1000;
 }
 
-.header-light-theme {
-  border-bottom: 0.1rem solid black;
-}
-
-.header-dark-theme {
-  border-bottom: 0.1rem solid white;
-}
-
 .nav-container {
   margin-right: 2%;
   width: 40%;
@@ -29,6 +21,16 @@ header {
   justify-content: space-around
 }
 
+/* Light and Dark Theme classes*/
+.header-light-theme {
+  border-bottom: 0.1rem solid black;
+}
+
+.header-dark-theme {
+  border-bottom: 0.1rem solid white;
+}
+
+/* Responsive Web Design */
 @media screen and (max-width: 1000px) {
   .nav-container {
     width: 60%;

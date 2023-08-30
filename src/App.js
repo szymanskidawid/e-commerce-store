@@ -6,7 +6,6 @@ import BasketGrid from "./components/basket-section/BasketGrid";
 
 function App() {
   //Changes between Light and Dark mode.
-
   const [darkMode, setDarkMode] = useState(false)
 
   const colorMode = () => {

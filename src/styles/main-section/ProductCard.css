@@ -7,14 +7,6 @@
   grid-template-rows: 1fr 5fr 2fr;
 }
 
-.product-card-container-light-theme {
-  border: 2px solid black;
-}
-
-.product-card-container-dark-theme {
-  border: 2px solid white;
-}
-
 .product-card-name,
 .product-card-price {
   display: flex;
@@ -48,8 +40,16 @@
   /* background-color: lightblue; */
 }
 
-/* Responsive Web Design */
+/* Light and Dark Theme classes*/
+.product-card-container-light-theme {
+  border: 2px solid black;
+}
 
+.product-card-container-dark-theme {
+  border: 2px solid white;
+}
+
+/* Responsive Web Design */
 @media screen and (max-width: 640px) {
   .product-card-container {
     width: 85%;

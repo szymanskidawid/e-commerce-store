@@ -17,7 +17,6 @@ footer {
 }
 
 /* Responsive Web Design */
-
 @media screen and (max-width: 640px) {
   footer {
     font-size: 1rem;

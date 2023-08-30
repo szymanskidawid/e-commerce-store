@@ -4,6 +4,7 @@ import MainButton from "../buttons/MainButton";
 
 const ProductCard = ({ darkMode }) => {
   return (
+    //Tertiary operator to change between light and dark mode classes.
     <div className={darkMode 
     ? 'product-card-container product-card-container-dark-theme' 
     : 'product-card-container product-card-container-light-theme'}>

@@ -8,14 +8,6 @@
   align-items: center;
 }
 
-.basket-product-container-light-theme {
-  border: 0.1em solid black;
-}
-
-.basket-product-container-dark-theme {
-  border: 0.1em solid white;
-}
-
 .basket-product-picture {
   height: 100%;
   width: auto;
@@ -72,8 +64,16 @@
   justify-content: center;
 }
 
-/* Responsive Web Design */
+/* Light and Dark Theme classes*/
+.basket-product-container-light-theme {
+  border: 0.1em solid black;
+}
 
+.basket-product-container-dark-theme {
+  border: 0.1em solid white;
+}
+
+/* Responsive Web Design */
 @media screen and (max-width: 1000px) {
   .basket-product-container {
     font-size: 1em;

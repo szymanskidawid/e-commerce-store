@@ -7,6 +7,9 @@
   
 }
 
+
+/* Light and Dark Theme classes for the body */
+
 body {
   color: black;
   background-color: var(--color-light);
