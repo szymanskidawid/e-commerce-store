@@ -22,9 +22,15 @@ const CategoriesDropDown = () => {
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}>
         <FormGroup>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Food" />
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Kitchen" />
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Electronics" />
+          <FormControlLabel control={
+            <Checkbox style={{ color: 'green' }} defaultChecked />} 
+            label="Food" />
+          <FormControlLabel control={
+            <Checkbox style={{ color: 'green' }} defaultChecked />} 
+            label="Kitchen" />
+          <FormControlLabel control={
+            <Checkbox style={{ color: 'green' }} defaultChecked />} 
+            label="Electronics" />
         </FormGroup>
       </div>
     </div> 
