@@ -4,6 +4,12 @@ main {
   min-height: 80vh;
   width: calc(100vw - 2rem);
   /* background-color: purple; */
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.product-grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   row-gap: 3rem;
@@ -12,25 +18,25 @@ main {
 
 /* Responsive Web Design */
 @media screen and (max-width: 1650px) {
-  main {
+  .product-grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (max-width: 1350px) {
-  main {
+  .product-grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 1000px) {
-  main {
+  .product-grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 640px) {
-  main {
+  .product-grid-container {
     font-size: 0.6rem;
     row-gap: 1rem;
   }

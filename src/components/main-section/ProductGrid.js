@@ -1,3 +1,4 @@
+import CategoriesDropDown from "./CategoriesDropDown";
 import ProductCard from "./ProductCard";
 
 // Container displaying items available to purchase.
@@ -5,26 +6,29 @@ import ProductCard from "./ProductCard";
 const ProductGrid = ({ darkMode }) => {
   return (
     <main>
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
-      <ProductCard darkMode={darkMode} />
+      <CategoriesDropDown />
+      <div className="product-grid-container">
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+        <ProductCard darkMode={darkMode} />
+      </div>
     </main>
   );
 }
