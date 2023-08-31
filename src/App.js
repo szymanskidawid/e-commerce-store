@@ -29,7 +29,6 @@ function App() {
   const [checkoutMode, setCheckoutMode] = useState(false)
 
   const toggleCheckout = () => {
-    console.log("Checkout button clicked")
     setCheckoutMode(!checkoutMode)
   }
 
