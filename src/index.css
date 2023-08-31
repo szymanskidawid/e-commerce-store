@@ -9,7 +9,6 @@
 
 
 /* Light and Dark Theme classes for the body */
-
 body {
   color: black;
   background-color: var(--color-light);
@@ -18,4 +17,15 @@ body {
 .body-dark-theme {
   color: white;
   background-color: var(--color-dark);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
