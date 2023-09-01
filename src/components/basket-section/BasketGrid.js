@@ -6,7 +6,7 @@ import BasketProduct from "./BasketProduct";
 const BasketGrid = ({ basketTotal, darkMode }) => {
   return (
     <section >
-      {/* Tertiary operator to change between light and dark mode classes. */}
+      {/* Ternary operator to change between light and dark mode classes. */}
       <div className={darkMode
       ? 'scrolling-window scrolling-window-dark-theme'
       : 'scrolling-window scrolling-window-light-theme'}>

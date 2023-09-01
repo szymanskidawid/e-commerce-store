@@ -6,7 +6,7 @@ import RemoveButton from "../buttons/RemoveButton";
 
 const BasketProduct = ({ darkMode }) => {
   return (
-    //Tertiary operator to change between light and dark mode classes.
+    //Ternary operator to change between light and dark mode classes.
     <div className={darkMode 
       ? 'basket-product-container basket-product-container-dark-theme' 
       : 'basket-product-container basket-product-container-light-theme'}>
