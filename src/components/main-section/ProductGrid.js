@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import CategoriesDropDown from "./CategoriesDropDown";
 import ProductCard from "./ProductCard";
 
-// Container displaying items available to purchase.
-
 const ProductGrid = ({ darkMode }) => {
 
   const [data, setData] = useState(null);

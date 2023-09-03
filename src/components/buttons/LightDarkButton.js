@@ -3,8 +3,6 @@ import Button from '@mui/material/Button';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-// Button used to change between Light and Dark mode.
-
 const LightDarkButton = ({ color, onClick }) => {
   //Below is used to cycle icons between sun and moon.
   const [buttonMode, setButtonMode] = useState(false)
