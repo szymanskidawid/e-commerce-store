@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CategoriesDropDown from "./CategoriesDropDown";
 import ProductCard from "./ProductCard";
 
-const ProductGrid = ({ darkMode }) => {
+const ProductGrid = ({ darkMode, addToBasket }) => {
 
   const [data, setData] = useState(null);
 
@@ -21,12 +21,6 @@ const ProductGrid = ({ darkMode }) => {
   const [isFoodSelected, setIsFoodSelected] = useState(true);
   const [isKitchenSelected, setIsKitchenSelected] = useState(true);
   const [isElectronicsSelected, setIsElectronicsSelected] = useState(true);
-
-  console.log("////");
-  console.log({isFoodSelected});
-  console.log({isKitchenSelected});
-  console.log({isElectronicsSelected});
-  console.log("////");
 
   return (
     <main>
@@ -53,10 +47,13 @@ const ProductGrid = ({ darkMode }) => {
             return false;
           }).map(product => (
             <ProductCard
-              key={product.id}
               darkMode={darkMode}
+              key={product.id}
               name={product.name}
               price={product.price}
+              onAddToBasket={() => {
+                addToBasket(product)
+              }}
             />
           ))
         )}

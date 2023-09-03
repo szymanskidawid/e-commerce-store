@@ -32,13 +32,22 @@ function App() {
     setCheckoutMode(!checkoutMode)
   }
 
+  const [basket, setBasket] = useState([]);
+
+  const [isBasketEmpty, setIsBasketEmpty] = useState(true);
+
+  const addToBasket = product => {
+    setBasket([...basket, product]);
+    setIsBasketEmpty(false);
+  }
+
   return (
     <div className="App">
       <Header toggleCheckout={toggleCheckout}
       colorMode={colorMode}
       darkMode={darkMode} />
-      {checkoutMode ? <BasketGrid basketTotal="50.00" darkMode={darkMode} /> 
-      : <ProductGrid darkMode={darkMode} />}
+      {checkoutMode ? <BasketGrid basketTotal="50.00" darkMode={darkMode} basket={basket} setBasket={setBasket} isBasketEmpty={isBasketEmpty} setIsBasketEmpty={setIsBasketEmpty} /> 
+      : <ProductGrid darkMode={darkMode} addToBasket={addToBasket}/>}
       <Footer darkMode={darkMode} />
     </div>
   );

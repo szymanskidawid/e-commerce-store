@@ -1,9 +1,17 @@
 import { useState } from "react";
 import MainButton from "../buttons/MainButton";
 import BasketProduct from "./BasketProduct";
+import { Alert } from "@mui/material";
 
-const BasketGrid = ({ basketTotal, darkMode }) => {
-  const [isBasketEmpty, setIsBasketEmpty] = useState(true);
+const BasketGrid = ({ basketTotal, darkMode, basket, setBasket, isBasketEmpty, setIsBasketEmpty }) => {
+  
+  const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
+
+  const purchaseProducts = () => {
+    setIsPurchaseComplete(true);
+    setIsBasketEmpty(true);
+    setBasket([]);
+  }
 
   return (
     <section >
@@ -11,17 +19,19 @@ const BasketGrid = ({ basketTotal, darkMode }) => {
       <div className={`scrolling-window ${darkMode
       ? 'scrolling-window-dark-theme'
       : 'scrolling-window-light-theme'}`}>
-        {isBasketEmpty === true ? 
-          <div className="basket-empty">
+        {isBasketEmpty 
+          ? <div className="basket-empty">
             Basket is Empty
           </div> :
-          <div className='basket-scrolling-container'>
-            <BasketProduct darkMode={darkMode} />
-            <BasketProduct darkMode={darkMode} />
-            <BasketProduct darkMode={darkMode} />
-            <BasketProduct darkMode={darkMode} />
-            <BasketProduct darkMode={darkMode} />
-            <BasketProduct darkMode={darkMode} />
+          <div className="basket-scrolling-container">
+            {basket.map((product) => (
+              <BasketProduct
+                darkMode={darkMode}
+                key={product.id}
+                name={product.name}
+                price={product.price}
+              />
+          ))}
           </div>
         }
       </div>
@@ -31,7 +41,12 @@ const BasketGrid = ({ basketTotal, darkMode }) => {
         </div>
         <MainButton className={"basket-section-purchase-button"}
         color={'success'} 
-        text={'Purchase'}/>
+        text={'Purchase'}
+        onClick={purchaseProducts}/>
+        {isPurchaseComplete
+          ? <Alert severity="success">Purchase successful!</Alert>
+          : ""
+        }
       </div>
     </section>
   );
