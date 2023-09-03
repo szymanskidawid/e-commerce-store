@@ -39,20 +39,27 @@ const ProductGrid = ({ darkMode }) => {
         setIsElectronicsSelected={setIsElectronicsSelected}
       />
       <div className="product-grid-container">
-        {data === null ? <div>Loading...</div> :
-          data.map(product => {
-
-
-
-            return (
-              <ProductCard 
-                darkMode={darkMode}
-                name={product.name}
-                price={product.price} 
-              />
-            )
-          })
-        }
+        {data === null ? (
+          <div>Loading...</div>
+        ) : (
+          data.filter(product => {
+            if (
+              (product.category === "Food" && isFoodSelected) ||
+              (product.category === "Kitchen" && isKitchenSelected) ||
+              (product.category === "Electronics" && isElectronicsSelected)
+            ) {
+              return true;
+            }
+            return false;
+          }).map(product => (
+            <ProductCard
+              key={product.id}
+              darkMode={darkMode}
+              name={product.name}
+              price={product.price}
+            />
+          ))
+        )}
       </div>
     </main>
   );
