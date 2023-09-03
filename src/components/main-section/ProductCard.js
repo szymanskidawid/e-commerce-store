@@ -1,13 +1,11 @@
 import MainButton from "../buttons/MainButton";
 
-// Container with product information and button that adds to the basket.
-
 const ProductCard = ({ darkMode, name, price }) => {
   return (
     //Ternary operator to change between light and dark mode classes.
     <div className={`product-card-container ${darkMode 
-    ? 'product-card-container-dark-theme' 
-    : 'product-card-container-light-theme'}`}>
+      ? 'product-card-container-dark-theme' 
+      : 'product-card-container-light-theme'}`}>
       <div className='product-card-name'>
         {name}
       </div>
