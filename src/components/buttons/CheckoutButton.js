@@ -4,17 +4,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CheckoutButton = ({ color, onClick }) => {
   return (
-    <Button className='checkout-button'
-    variant='contained'
-    color={color}
-    onClick={onClick}>
+    <Button className="checkout-button" variant="contained" color={color} onClick={onClick}>
       <ShoppingCartIcon style={{ fontSize: 45 }} />
     </Button>
   );
-}
+};
 
 CheckoutButton.propTypes = {
-  onClick: PropTypes.func
-}
+  onClick: PropTypes.func,
+};
 
 export default CheckoutButton;

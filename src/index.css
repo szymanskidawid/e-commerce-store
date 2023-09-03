@@ -1,5 +1,3 @@
-/* This file contains general CSS for the whole page */
-
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +5,6 @@
   
 }
 
-
-/* Light and Dark Theme classes for the body */
 body {
   color: black;
   background-color: var(--color-light);
@@ -19,7 +15,6 @@ body {
   background-color: var(--color-dark);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
