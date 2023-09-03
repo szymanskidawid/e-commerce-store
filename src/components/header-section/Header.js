@@ -3,10 +3,7 @@ import MainButton from "../buttons/MainButton";
 import CheckoutButton from "../buttons/CheckoutButton";
 import LightDarkButton from "../buttons/LightDarkButton";
 
-// Header component containing logo and buttons.
-
-const Header = ({ toggleCheckout, colorMode, darkMode }) => {
-  return (
+const Header = ({ toggleCheckout, colorMode, darkMode }) => (
     <div>
       <header className={darkMode 
       ? 'header-dark-theme' 
@@ -21,6 +18,5 @@ const Header = ({ toggleCheckout, colorMode, darkMode }) => {
       </header>
     </div>
   );
-}
 
 export default Header;
