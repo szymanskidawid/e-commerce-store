@@ -1,6 +1,6 @@
 import MainButton from '../buttons/MainButton';
 
-const ProductCard = ({ darkMode, name, price, onAddToBasket }) => {
+const ProductCard = ({ darkMode, name, price, addToBasket }) => {
   return (
     //Ternary operator to change between light and dark mode classes.
     <div
@@ -18,7 +18,7 @@ const ProductCard = ({ darkMode, name, price, onAddToBasket }) => {
           className={'product-section-add-button'}
           color={'success'}
           text={'Add to Cart'}
-          onClick={onAddToBasket}
+          onClick={addToBasket}
         />
       </div>
     </div>
