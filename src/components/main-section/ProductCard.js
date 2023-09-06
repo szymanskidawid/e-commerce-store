@@ -13,7 +13,7 @@ const ProductCard = ({ darkMode, name, price, onAddToBasket }) => {
         <img src="https://picsum.photos/300/125" />
       </div>
       <div className="product-card-bottom">
-        <div className="product-card-price">{price}</div>
+        <div className="product-card-price">{price.toFixed(2)}</div>
         <MainButton
           className={'product-section-add-button'}
           color={'success'}
