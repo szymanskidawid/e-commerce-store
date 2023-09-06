@@ -2,7 +2,7 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveButton from '../buttons/RemoveButton';
 
-const BasketProduct = ({ darkMode, name, price }) => {
+const BasketProduct = ({ darkMode, name, price, deleteProductFromBasket }) => {
   return (
     //Ternary operator to change between light and dark mode classes.
     <div
@@ -23,7 +23,7 @@ const BasketProduct = ({ darkMode, name, price }) => {
         <div className="basket-product-price">{price} zł</div>
       </div>
       <div className="basket-product-remove-container">
-        <RemoveButton />
+        <RemoveButton deleteProductFromBasket={deleteProductFromBasket} />
       </div>
     </div>
   );

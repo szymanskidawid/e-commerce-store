@@ -3,7 +3,15 @@ import MainButton from '../buttons/MainButton';
 import BasketProduct from './BasketProduct';
 import { Alert } from '@mui/material';
 
-const BasketGrid = ({ basketTotal, darkMode, basket, setBasket, isBasketEmpty, setIsBasketEmpty }) => {
+const BasketGrid = ({
+  basketTotal,
+  darkMode,
+  basket,
+  setBasket,
+  isBasketEmpty,
+  setIsBasketEmpty,
+  deleteProductFromBasket,
+}) => {
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const purchaseProducts = () => {
@@ -21,7 +29,13 @@ const BasketGrid = ({ basketTotal, darkMode, basket, setBasket, isBasketEmpty, s
         ) : (
           <div className="basket-scrolling-container">
             {basket.map((product) => (
-              <BasketProduct darkMode={darkMode} key={product.id} name={product.name} price={product.price} />
+              <BasketProduct
+                darkMode={darkMode}
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                deleteProductFromBasket={() => deleteProductFromBasket(product.id)}
+              />
             ))}
           </div>
         )}
