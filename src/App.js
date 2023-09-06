@@ -40,17 +40,36 @@ function App() {
     setIsBasketEmpty(false);
   };
 
+  const deleteProductFromBasket = (productId) => {
+    const updatedBasket = basket.filter((product) => product.id !== productId);
+    setBasket(updatedBasket);
+    if (updatedBasket.length === 0) {
+      setIsBasketEmpty(true);
+    }
+  };
+
+  const totalPrice = () => {
+    let price = 0;
+
+    basket.forEach((product) => {
+      price = price + product.price;
+    });
+
+    return price;
+  };
+
   return (
     <div className="App">
       <Header toggleCheckout={toggleCheckout} colorMode={colorMode} darkMode={darkMode} />
       {checkoutMode ? (
         <BasketGrid
-          basketTotal="50.00"
+          basketTotal={totalPrice()}
           darkMode={darkMode}
           basket={basket}
           setBasket={setBasket}
           isBasketEmpty={isBasketEmpty}
           setIsBasketEmpty={setIsBasketEmpty}
+          deleteProductFromBasket={deleteProductFromBasket}
         />
       ) : (
         <ProductGrid darkMode={darkMode} addToBasket={addToBasket} />
