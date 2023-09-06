@@ -20,7 +20,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": 0,
-    "allow-parens": "as-needed" 
+    "allow-parens": 0
   },
   "parserOptions": {
     "sourceType": "module",
