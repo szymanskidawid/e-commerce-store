@@ -8,6 +8,20 @@ function App() {
   //Changes between Light and Dark mode.
   const [darkMode, setDarkMode] = useState(false);
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://localhost:4000/products');
+
+      const dataJSON = await response.json();
+
+      setData(dataJSON);
+    };
+
+    fetchData();
+  }, []);
+
   const colorMode = () => {
     setDarkMode(!darkMode);
   };
@@ -31,31 +45,53 @@ function App() {
     setCheckoutMode(!checkoutMode);
   };
 
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useState({});
 
   const [isBasketEmpty, setIsBasketEmpty] = useState(true);
 
+  //Basket functionalities
   const addToBasket = (product) => {
-    setBasket([...basket, product]);
+    const newBasket = { ...basket };
+
+    if (newBasket[product.id] >= 1) {
+      setBasket({ ...newBasket, [product.id]: newBasket[product.id] + 1 });
+    } else {
+      setBasket({ ...newBasket, [product.id]: 1 });
+    }
+
     setIsBasketEmpty(false);
   };
 
-  const deleteProductFromBasket = (productId) => {
-    const updatedBasket = basket.filter((product) => product.id !== productId);
-    setBasket(updatedBasket);
-    if (updatedBasket.length === 0) {
+  const decrementQuantity = (id) => {
+    const newBasket = { ...basket };
+    if (newBasket[id] > 1) {
+      setBasket({ ...newBasket, [id]: newBasket[id] - 1 });
+    }
+  };
+
+  const incrementQuantity = (id) => {
+    const newBasket = { ...basket };
+    if (newBasket[id] < data.find((item) => item.id === id).stock) {
+      setBasket({ ...newBasket, [id]: newBasket[id] + 1 });
+    }
+  };
+
+  const deleteProductFromBasket = (id) => {
+    const newBasket = { ...basket };
+    delete newBasket[id];
+    setBasket(newBasket);
+    if (Object.keys(newBasket).length === 0) {
       setIsBasketEmpty(true);
     }
   };
 
+  //Other
   const totalPrice = () => {
     let price = 0;
-
-    basket.forEach((product) => {
-      price = price + product.price;
+    Object.keys(basket).forEach((id) => {
+      price += data.find((item) => item.id === id).price * basket[id];
     });
-
-    return price;
+    return price.toFixed(2);
   };
 
   return (
@@ -65,6 +101,9 @@ function App() {
         <BasketGrid
           basketTotal={totalPrice()}
           darkMode={darkMode}
+          data={data}
+          decrementQuantity={decrementQuantity}
+          incrementQuantity={incrementQuantity}
           basket={basket}
           setBasket={setBasket}
           isBasketEmpty={isBasketEmpty}
@@ -72,7 +111,7 @@ function App() {
           deleteProductFromBasket={deleteProductFromBasket}
         />
       ) : (
-        <ProductGrid darkMode={darkMode} addToBasket={addToBasket} />
+        <ProductGrid darkMode={darkMode} data={data} addToBasket={addToBasket} />
       )}
       <Footer darkMode={darkMode} />
     </div>

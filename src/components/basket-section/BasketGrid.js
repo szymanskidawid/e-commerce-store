@@ -6,6 +6,9 @@ import { Alert } from '@mui/material';
 const BasketGrid = ({
   basketTotal,
   darkMode,
+  data,
+  decrementQuantity,
+  incrementQuantity,
   basket,
   setBasket,
   isBasketEmpty,
@@ -28,13 +31,17 @@ const BasketGrid = ({
           <div className="basket-empty">Basket is Empty</div>
         ) : (
           <div className="basket-scrolling-container">
-            {basket.map((product) => (
+            {Object.keys(basket).map((id) => (
               <BasketProduct
                 darkMode={darkMode}
-                key={product.id}
-                name={product.name}
-                price={product.price}
-                deleteProductFromBasket={() => deleteProductFromBasket(product.id)}
+                id={id}
+                key={id}
+                name={data.find((item) => item.id === id).name}
+                quantity={basket[id]}
+                decrementQuantity={decrementQuantity}
+                incrementQuantity={incrementQuantity}
+                price={data.find((item) => item.id === id).price}
+                deleteProductFromBasket={() => deleteProductFromBasket(id)}
               />
             ))}
           </div>
