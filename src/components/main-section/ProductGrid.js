@@ -1,22 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CategoriesDropDown from './CategoriesDropDown';
 import ProductCard from './ProductCard';
 
-const ProductGrid = ({ darkMode, addToBasket }) => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/products');
-
-      const dataJSON = await response.json();
-
-      setData(dataJSON);
-    };
-
-    fetchData();
-  }, []);
-
+const ProductGrid = ({ darkMode, data, addToBasket }) => {
   const [isFoodSelected, setIsFoodSelected] = useState(true);
   const [isKitchenSelected, setIsKitchenSelected] = useState(true);
   const [isElectronicsSelected, setIsElectronicsSelected] = useState(true);
