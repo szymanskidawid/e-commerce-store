@@ -38,6 +38,7 @@ const ProductGrid = ({ darkMode, data, addToBasket }) => {
                 key={product.id}
                 name={product.name}
                 price={product.price}
+                stock={product.stock}
                 addToBasket={() => {
                   addToBasket(product);
                 }}
