@@ -6,4 +6,18 @@
   border-radius: 0.6rem;
   text-align: center;
   cursor: pointer;
+  position: relative;
+}
+
+.checkout-button-products-amount-label {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

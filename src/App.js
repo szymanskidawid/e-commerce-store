@@ -96,7 +96,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header toggleCheckout={toggleCheckout} colorMode={colorMode} darkMode={darkMode} />
+      <Header
+        toggleCheckout={toggleCheckout}
+        colorMode={colorMode}
+        darkMode={darkMode}
+        basketItems={Object.keys(basket).length}
+      />
       {checkoutMode ? (
         <BasketGrid
           basketTotal={totalPrice()}
