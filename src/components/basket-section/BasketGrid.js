@@ -38,6 +38,7 @@ const BasketGrid = ({
                 key={id}
                 name={data.find((item) => item.id === id).name}
                 quantity={basket[id]}
+                stock={data.find((item) => item.id === id).stock}
                 decrementQuantity={decrementQuantity}
                 incrementQuantity={incrementQuantity}
                 price={data.find((item) => item.id === id).price}
