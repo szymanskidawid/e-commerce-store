@@ -7,6 +7,7 @@ const BasketProduct = ({
   id,
   name,
   quantity,
+  stock,
   decrementQuantity,
   incrementQuantity,
   price,
@@ -26,11 +27,19 @@ const BasketProduct = ({
       <div className="basket-product-info">
         <div className="basket-product-name">{name}</div>
         <div className="basket-product-quantity-container">
-          <RemoveCircleOutlineIcon className="basket-product-quantity-buttons" onClick={() => decrementQuantity(id)} />
+          <RemoveCircleOutlineIcon
+            className="basket-product-quantity-buttons"
+            style={{ color: quantity === 1 ? 'gray' : '' }}
+            onClick={() => decrementQuantity(id)}
+          />
           <p className="basket-product-quantity-number">{quantity}</p>
-          <AddCircleOutlineIcon className="basket-product-quantity-buttons" onClick={() => incrementQuantity(id)} />
+          <AddCircleOutlineIcon
+            className="basket-product-quantity-buttons"
+            style={{ color: quantity === stock ? 'gray' : '' }}
+            onClick={() => incrementQuantity(id)}
+          />
         </div>
-        <div className="basket-product-price">{totalPrice} zł</div>
+        <div className="basket-product-price">{totalPrice.toFixed(2)} zł</div>
       </div>
       <div className="basket-product-remove-container">
         <RemoveButton deleteProductFromBasket={deleteProductFromBasket} />
