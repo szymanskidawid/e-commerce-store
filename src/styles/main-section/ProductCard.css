@@ -34,10 +34,27 @@
   display: grid; 
   grid-template-columns: 0.8fr 1.2fr;
   column-gap: 0.5em;
+  position: relative;
 }
 
 .product-card-price {
   /* background-color: lightblue; */
+}
+
+.product-card-out-of-stock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+
+.product-card-purchase-successful {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
 }
 
 /* Light and Dark Theme classes*/
@@ -55,5 +72,9 @@
     width: 85%;
     height: auto;
     grid-template-rows: 1fr 5fr 2fr;
+  }
+
+  .product-card-purchase-successful {
+    bottom: -130%;
   }
 }
