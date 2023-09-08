@@ -39,6 +39,6 @@ main {
 @media screen and (max-width: 640px) {
   .product-grid-container {
     font-size: 0.6rem;
-    row-gap: 1rem;
+    row-gap: 3.5rem;
   }
 }
