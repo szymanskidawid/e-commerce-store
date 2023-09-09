@@ -101,6 +101,7 @@ function App() {
         colorMode={colorMode}
         darkMode={darkMode}
         basketItems={Object.keys(basket).length}
+        basketTotal={totalPrice()}
       />
       {checkoutMode ? (
         <BasketGrid
@@ -116,7 +117,7 @@ function App() {
           deleteProductFromBasket={deleteProductFromBasket}
         />
       ) : (
-        <ProductGrid darkMode={darkMode} data={data} addToBasket={addToBasket} />
+        <ProductGrid darkMode={darkMode} data={data} basket={basket} addToBasket={addToBasket} />
       )}
       <Footer darkMode={darkMode} />
     </div>
