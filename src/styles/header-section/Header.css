@@ -12,12 +12,24 @@ header {
 
 .nav-container {
   margin-right: 2%;
-  width: 40%;
+  width: 45%;
   height: 100%;
   /*background-color: blue;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.nav-section-basket-components {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-section-basket-total {
+  font-size: 1.5em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 /* Light and Dark Theme classes*/
@@ -32,6 +44,12 @@ header {
 }
 
 /* Responsive Web Design */
+@media screen and (max-width: 800px){
+  .nav-section-basket-total {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .nav-container {
     width: 60%;
