@@ -41,12 +41,20 @@
   /* background-color: lightblue; */
 }
 
+.product-card-in-basket,
 .product-card-out-of-stock {
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
   border-radius: 5px;
+}
+
+.product-card-in-basket {
+  border: 3px solid green;
+}
+
+.product-card-out-of-stock {
   color: white;
   background-color: red;
 }

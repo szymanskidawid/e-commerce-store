@@ -2,7 +2,7 @@ import { useState } from 'react';
 import MainButton from '../buttons/MainButton';
 import { Alert } from '@mui/material';
 
-const ProductCard = ({ darkMode, name, price, stock, addToBasket }) => {
+const ProductCard = ({ darkMode, name, price, stock, isInBasket, addToBasket }) => {
   const [isAddedToBasket, setIsAddedToBasket] = useState(false);
 
   const handleAddToBasket = () => {
@@ -28,12 +28,16 @@ const ProductCard = ({ darkMode, name, price, stock, addToBasket }) => {
       <div className="product-card-bottom">
         <div className="product-card-price">{price.toFixed(2)}</div>
         {stock > 0 ? (
-          <MainButton
-            className={'product-section-add-button'}
-            color={'success'}
-            text={'Add to Cart'}
-            onClick={handleAddToBasket}
-          />
+          isInBasket ? (
+            <div className="product-card-in-basket">IN BASKET</div>
+          ) : (
+            <MainButton
+              className={'product-section-add-button'}
+              color={'success'}
+              text={'Add to Cart'}
+              onClick={handleAddToBasket}
+            />
+          )
         ) : (
           <div className="product-card-out-of-stock">OUT OF STOCK</div>
         )}
