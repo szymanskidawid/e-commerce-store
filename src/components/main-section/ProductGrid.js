@@ -9,14 +9,16 @@ const ProductGrid = ({ darkMode, data, basket, addToBasket }) => {
 
   return (
     <main>
-      <CategoriesDropDown
-        isFoodSelected={isFoodSelected}
-        isKitchenSelected={isKitchenSelected}
-        isElectronicsSelected={isElectronicsSelected}
-        setIsFoodSelected={setIsFoodSelected}
-        setIsKitchenSelected={setIsKitchenSelected}
-        setIsElectronicsSelected={setIsElectronicsSelected}
-      />
+      <div className="product-grid-categories">
+        <CategoriesDropDown
+          isFoodSelected={isFoodSelected}
+          isKitchenSelected={isKitchenSelected}
+          isElectronicsSelected={isElectronicsSelected}
+          setIsFoodSelected={setIsFoodSelected}
+          setIsKitchenSelected={setIsKitchenSelected}
+          setIsElectronicsSelected={setIsElectronicsSelected}
+        />
+      </div>
       <div className="product-grid-container">
         {data === null ? (
           <div>Loading...</div>

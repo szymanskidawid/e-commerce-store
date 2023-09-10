@@ -17,6 +17,10 @@ main {
   justify-items: center;
 }
 
+.product-grid-categories {
+  display: flex;
+}
+
 /* Responsive Web Design */
 @media screen and (max-width: 1650px) {
   .product-grid-container {
@@ -40,5 +44,9 @@ main {
   .product-grid-container {
     font-size: 0.6rem;
     row-gap: 3.5rem;
+  }
+
+  .product-grid-categories {
+    justify-content: center;
   }
 }

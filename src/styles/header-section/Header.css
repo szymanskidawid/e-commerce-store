@@ -21,6 +21,7 @@ header {
 }
 
 .nav-section-basket-components {
+  height: 75%;
   display: flex;
   flex-direction: row;
 }
