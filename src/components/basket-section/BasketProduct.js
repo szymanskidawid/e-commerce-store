@@ -25,7 +25,12 @@ const BasketProduct = ({
         <img src="https://picsum.photos/150/62" />
       </div>
       <div className="basket-product-info">
-        <div className="basket-product-name">{name}</div>
+        <div>
+          <div className="basket-product-name">{name}</div>
+          <div className="basket-product-stock" style={{ color: quantity === stock ? 'red' : 'green' }}>
+            In stock: {stock}
+          </div>
+        </div>
         <div className="basket-product-quantity-container">
           <RemoveCircleOutlineIcon
             className="basket-product-quantity-buttons"

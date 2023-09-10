@@ -36,6 +36,10 @@
   /* background-color: blueviolet; */
 }
 
+.basket-product-stock {
+  font-size: 0.8em;
+}
+
 .basket-product-quantity-container {
   display: flex;
   align-items: center;
