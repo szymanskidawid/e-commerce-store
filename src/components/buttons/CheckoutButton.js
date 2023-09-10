@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -11,10 +10,6 @@ const CheckoutButton = ({ color, onClick, basketItems }) => {
       </div>
     </Button>
   );
-};
-
-CheckoutButton.propTypes = {
-  onClick: PropTypes.func,
 };
 
 export default CheckoutButton;
