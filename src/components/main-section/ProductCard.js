@@ -34,7 +34,7 @@ const ProductCard = ({ darkMode, name, price, stock, isInBasket, addToBasket }) 
             <MainButton
               className={'product-section-add-button'}
               color={'success'}
-              text={'Add to Cart'}
+              text={'Add to Basket'}
               onClick={handleAddToBasket}
             />
           )
