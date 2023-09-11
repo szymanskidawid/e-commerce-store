@@ -7,6 +7,7 @@
   overflow: hidden;
   position: fixed;
   opacity: 0.9;
+  z-index: 1000;
 }
 
 .categories-hover-container {

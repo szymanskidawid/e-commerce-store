@@ -18,9 +18,15 @@ const BasketGrid = ({
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const purchaseProducts = () => {
-    setIsPurchaseComplete(true);
-    setIsBasketEmpty(true);
-    setBasket([]);
+    if (!isBasketEmpty) {
+      setIsPurchaseComplete(true);
+      setIsBasketEmpty(true);
+      setBasket([]);
+
+      setTimeout(() => {
+        setIsPurchaseComplete(false);
+      }, 2000);
+    }
   };
 
   return (
@@ -56,7 +62,7 @@ const BasketGrid = ({
           text={'Purchase'}
           onClick={purchaseProducts}
         />
-        {isPurchaseComplete ? <Alert severity="success">Purchase successful!</Alert> : ''}
+        {isPurchaseComplete && <Alert severity="success">Purchase successful!</Alert>}
       </div>
     </section>
   );
