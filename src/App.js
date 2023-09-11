@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/header-section/Header';
 import ProductGrid from './components/main-section/ProductGrid';
 import BasketGrid from './components/basket-section/BasketGrid';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
   //Changes between Light and Dark mode.
@@ -39,11 +40,6 @@ function App() {
   }, [darkMode]);
 
   //Below displays the basket.
-  const [checkoutMode, setCheckoutMode] = useState(false);
-
-  const toggleCheckout = () => {
-    setCheckoutMode(!checkoutMode);
-  };
 
   const [basket, setBasket] = useState({});
 
@@ -94,32 +90,54 @@ function App() {
     return price.toFixed(2);
   };
 
+  const router = createBrowserRouter([
+    {
+      path: '/products',
+      element: (
+        <>
+          <Header
+            colorMode={colorMode}
+            darkMode={darkMode}
+            basketItems={Object.keys(basket).length}
+            basketTotal={totalPrice()}
+          />
+          <ProductGrid darkMode={darkMode} data={data} basket={basket} addToBasket={addToBasket} />
+          <Footer darkMode={darkMode} />
+        </>
+      ),
+    },
+
+    {
+      path: '/basket',
+      element: (
+        <>
+          <Header
+            colorMode={colorMode}
+            darkMode={darkMode}
+            basketItems={Object.keys(basket).length}
+            basketTotal={totalPrice()}
+          />
+          <BasketGrid
+            basketTotal={totalPrice()}
+            darkMode={darkMode}
+            data={data}
+            decrementQuantity={decrementQuantity}
+            incrementQuantity={incrementQuantity}
+            basket={basket}
+            setBasket={setBasket}
+            isBasketEmpty={isBasketEmpty}
+            setIsBasketEmpty={setIsBasketEmpty}
+            deleteProductFromBasket={deleteProductFromBasket}
+          />
+          <Footer darkMode={darkMode} />
+        </>
+      ),
+    },
+  ]);
+
   return (
     <div className="App">
-      <Header
-        toggleCheckout={toggleCheckout}
-        colorMode={colorMode}
-        darkMode={darkMode}
-        basketItems={Object.keys(basket).length}
-        basketTotal={totalPrice()}
-      />
-      {checkoutMode ? (
-        <BasketGrid
-          basketTotal={totalPrice()}
-          darkMode={darkMode}
-          data={data}
-          decrementQuantity={decrementQuantity}
-          incrementQuantity={incrementQuantity}
-          basket={basket}
-          setBasket={setBasket}
-          isBasketEmpty={isBasketEmpty}
-          setIsBasketEmpty={setIsBasketEmpty}
-          deleteProductFromBasket={deleteProductFromBasket}
-        />
-      ) : (
-        <ProductGrid darkMode={darkMode} data={data} basket={basket} addToBasket={addToBasket} />
-      )}
-      <Footer darkMode={darkMode} />
+      <RouterProvider router={router} />
     </div>
   );
 }
