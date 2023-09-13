@@ -3,8 +3,12 @@ import MainButton from '../buttons/MainButton';
 import CheckoutButton from '../buttons/CheckoutButton';
 import LightDarkButton from '../buttons/LightDarkButton';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../contexts/DarkModeContext';
 
-const Header = ({ colorMode, darkMode, basketItems, basketTotal }) => {
+const Header = ({ basketItems, basketTotal }) => {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+
   return (
     <div>
       <header className={darkMode ? 'header-dark-theme' : 'header-light-theme'}>
@@ -22,7 +26,7 @@ const Header = ({ colorMode, darkMode, basketItems, basketTotal }) => {
             </Link>
           </div>
           <div className="nav-theme-button-container">
-            <LightDarkButton onClick={colorMode} />
+            <LightDarkButton onClick={() => setDarkMode(!darkMode)} />
           </div>
         </nav>
       </header>

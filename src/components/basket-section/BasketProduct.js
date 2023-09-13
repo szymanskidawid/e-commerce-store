@@ -1,9 +1,10 @@
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveButton from '../buttons/RemoveButton';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../contexts/DarkModeContext';
 
 const BasketProduct = ({
-  darkMode,
   id,
   name,
   quantity,
@@ -13,7 +14,10 @@ const BasketProduct = ({
   price,
   deleteProductFromBasket,
 }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const totalPrice = price * quantity;
+
   return (
     //Ternary operator to change between light and dark mode classes.
     <div

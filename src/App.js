@@ -4,6 +4,7 @@ import Header from './components/header-section/Header';
 import ProductGrid from './components/main-section/ProductGrid';
 import BasketGrid from './components/basket-section/BasketGrid';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { DarkModeContext } from './contexts/DarkModeContext';
 
 function App() {
   //Changes between Light and Dark mode.
@@ -22,10 +23,6 @@ function App() {
 
     fetchData();
   }, []);
-
-  const colorMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   useEffect(() => {
     if (darkMode) {
@@ -107,14 +104,9 @@ function App() {
       path: '/products',
       element: (
         <>
-          <Header
-            colorMode={colorMode}
-            darkMode={darkMode}
-            basketItems={Object.keys(basket).length}
-            basketTotal={totalPrice()}
-          />
-          <ProductGrid darkMode={darkMode} data={data} basket={basket} addToBasket={addToBasket} />
-          <Footer darkMode={darkMode} />
+          <Header basketItems={Object.keys(basket).length} basketTotal={totalPrice()} />
+          <ProductGrid data={data} basket={basket} addToBasket={addToBasket} />
+          <Footer />
         </>
       ),
     },
@@ -123,15 +115,9 @@ function App() {
       path: '/basket',
       element: (
         <>
-          <Header
-            colorMode={colorMode}
-            darkMode={darkMode}
-            basketItems={Object.keys(basket).length}
-            basketTotal={totalPrice()}
-          />
+          <Header basketItems={Object.keys(basket).length} basketTotal={totalPrice()} />
           <BasketGrid
             basketTotal={totalPrice()}
-            darkMode={darkMode}
             data={data}
             decrementQuantity={decrementQuantity}
             incrementQuantity={incrementQuantity}
@@ -142,7 +128,7 @@ function App() {
             deleteProductFromBasket={deleteProductFromBasket}
             reduceStock={reduceStock}
           />
-          <Footer darkMode={darkMode} />
+          <Footer />
         </>
       ),
     },
@@ -150,7 +136,9 @@ function App() {
 
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+        <RouterProvider router={router} />
+      </DarkModeContext.Provider>
     </div>
   );
 }

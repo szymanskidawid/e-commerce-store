@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import MainButton from '../buttons/MainButton';
 import { Alert } from '@mui/material';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../contexts/DarkModeContext';
 
-const ProductCard = ({ darkMode, name, price, stock, isInBasket, addToBasket }) => {
+const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const [isAddedToBasket, setIsAddedToBasket] = useState(false);
 
   const handleAddToBasket = () => {

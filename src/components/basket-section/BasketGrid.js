@@ -2,10 +2,11 @@ import { useState } from 'react';
 import MainButton from '../buttons/MainButton';
 import BasketProduct from './BasketProduct';
 import { Alert } from '@mui/material';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../contexts/DarkModeContext';
 
 const BasketGrid = ({
   basketTotal,
-  darkMode,
   data,
   decrementQuantity,
   incrementQuantity,
@@ -16,6 +17,8 @@ const BasketGrid = ({
   deleteProductFromBasket,
   reduceStock,
 }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const purchaseProducts = () => {
@@ -47,7 +50,6 @@ const BasketGrid = ({
           <div className="basket-scrolling-container">
             {Object.keys(basket).map((id) => (
               <BasketProduct
-                darkMode={darkMode}
                 id={id}
                 key={id}
                 name={data.find((item) => item.id === id).name}
