@@ -14,11 +14,19 @@ const BasketGrid = ({
   isBasketEmpty,
   setIsBasketEmpty,
   deleteProductFromBasket,
+  reduceStock,
 }) => {
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const purchaseProducts = () => {
     if (!isBasketEmpty) {
+      Object.keys(basket).forEach((basketItemId) => {
+        const product = data.find((item) => item.id === basketItemId);
+        const quantity = basket[basketItemId];
+
+        reduceStock(product, quantity);
+      });
+
       setIsPurchaseComplete(true);
       setIsBasketEmpty(true);
       setBasket([]);

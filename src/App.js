@@ -40,7 +40,6 @@ function App() {
   }, [darkMode]);
 
   //Below displays the basket.
-
   const [basket, setBasket] = useState({});
 
   const [isBasketEmpty, setIsBasketEmpty] = useState(true);
@@ -79,6 +78,19 @@ function App() {
     if (Object.keys(newBasket).length === 0) {
       setIsBasketEmpty(true);
     }
+  };
+
+  const reduceStock = (product, quantity) => {
+    fetch(`http://localhost:4000/products/${product.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...product,
+        stock: product.stock - quantity,
+      }),
+    });
   };
 
   //Other
@@ -128,6 +140,7 @@ function App() {
             isBasketEmpty={isBasketEmpty}
             setIsBasketEmpty={setIsBasketEmpty}
             deleteProductFromBasket={deleteProductFromBasket}
+            reduceStock={reduceStock}
           />
           <Footer darkMode={darkMode} />
         </>
