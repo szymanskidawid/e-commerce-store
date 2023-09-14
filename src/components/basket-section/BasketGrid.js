@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
-import { fetchData } from '../../helpers/FetchData';
+import { fetchData } from '../../helpers/fetchData';
 
 const BasketGrid = ({
   basketTotalPrice,
@@ -23,14 +23,23 @@ const BasketGrid = ({
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
-  const purchaseProducts = () => {
+  const purchaseProducts = async () => {
     if (!isBasketEmpty) {
-      Object.keys(basket).forEach((basketItemId) => {
-        const product = data.find((item) => item.id === basketItemId);
-        const quantity = basket[basketItemId];
+      const basketItems = Object.keys(basket);
 
-        reduceStock(product, quantity);
+      const products = basketItems.map((basketItemId) => {
+        return data.find((item) => item.id === basketItemId);
       });
+
+      const quantities = basketItems.map((basketItemId) => {
+        return basket[basketItemId];
+      });
+
+      await Promise.all(
+        products.map((product, i) => {
+          return reduceStock(product, quantities[i]);
+        })
+      );
 
       setIsPurchaseComplete(true);
       setIsBasketEmpty(true);

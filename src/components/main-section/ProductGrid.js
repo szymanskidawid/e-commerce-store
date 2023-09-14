@@ -9,21 +9,16 @@ const ProductGrid = ({ addToBasket }) => {
   const { basket } = useContext(BasketContext);
   const { data } = useContext(DataContext);
 
-  const [isFoodSelected, setIsFoodSelected] = useState(true);
-  const [isKitchenSelected, setIsKitchenSelected] = useState(true);
-  const [isElectronicsSelected, setIsElectronicsSelected] = useState(true);
+  const [dropDownItems, setDropDownItems] = useState({
+    food: true,
+    kitchen: true,
+    electronics: true,
+  });
 
   return (
     <main>
       <div className="product-grid-categories">
-        <CategoriesDropDown
-          isFoodSelected={isFoodSelected}
-          isKitchenSelected={isKitchenSelected}
-          isElectronicsSelected={isElectronicsSelected}
-          setIsFoodSelected={setIsFoodSelected}
-          setIsKitchenSelected={setIsKitchenSelected}
-          setIsElectronicsSelected={setIsElectronicsSelected}
-        />
+        <CategoriesDropDown dropDownItems={dropDownItems} setDropDownItems={setDropDownItems} />
       </div>
       <div className="product-grid-container">
         {data === null ? (
@@ -32,9 +27,9 @@ const ProductGrid = ({ addToBasket }) => {
           data
             .filter((product) => {
               if (
-                (product.category === 'Food' && isFoodSelected) ||
-                (product.category === 'Kitchen' && isKitchenSelected) ||
-                (product.category === 'Electronics' && isElectronicsSelected)
+                (product.category === 'Food' && dropDownItems.food) ||
+                (product.category === 'Kitchen' && dropDownItems.kitchen) ||
+                (product.category === 'Electronics' && dropDownItems.electronics)
               ) {
                 return true;
               }

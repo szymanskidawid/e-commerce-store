@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
-const CategoriesDropDown = ({
-  isFoodSelected,
-  isKitchenSelected,
-  isElectronicsSelected,
-  setIsFoodSelected,
-  setIsKitchenSelected,
-  setIsElectronicsSelected,
-}) => {
+const CategoriesDropDown = ({ dropDownItems, setDropDownItems }) => {
   //Displays categories when hovered over the main label.
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
@@ -31,17 +24,32 @@ const CategoriesDropDown = ({
           <FormControlLabel
             control={<Checkbox style={{ color: 'green' }} defaultChecked />}
             label="Food"
-            onClick={() => setIsFoodSelected(!isFoodSelected)}
+            onClick={() =>
+              setDropDownItems({
+                ...dropDownItems,
+                food: !dropDownItems.food,
+              })
+            }
           />
           <FormControlLabel
             control={<Checkbox style={{ color: 'green' }} defaultChecked />}
             label="Kitchen"
-            onClick={() => setIsKitchenSelected(!isKitchenSelected)}
+            onClick={() =>
+              setDropDownItems({
+                ...dropDownItems,
+                kitchen: !dropDownItems.kitchen,
+              })
+            }
           />
           <FormControlLabel
             control={<Checkbox style={{ color: 'green' }} defaultChecked />}
             label="Electronics"
-            onClick={() => setIsElectronicsSelected(!isElectronicsSelected)}
+            onClick={() =>
+              setDropDownItems({
+                ...dropDownItems,
+                electronics: !dropDownItems.electronics,
+              })
+            }
           />
         </FormGroup>
       </div>
