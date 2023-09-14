@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/header-section/Header';
 import ProductGrid from './components/main-section/ProductGrid';
 import BasketGrid from './components/basket-section/BasketGrid';
-import Contexts from './contexts/Contexts';
+import ContextProviders from './contexts/ContextProviders';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { fetchData } from './helpers/fetchData';
 
@@ -127,9 +127,9 @@ function App() {
 
   return (
     <div className="App">
-      <Contexts {...{ darkMode, setDarkMode, basket, setBasket, data, setData }}>
+      <ContextProviders {...{ darkMode, setDarkMode, basket, setBasket, data, setData }}>
         <RouterProvider router={router} />
-      </Contexts>
+      </ContextProviders>
     </div>
   );
 }
