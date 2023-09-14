@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 
-const Header = ({ basketItems, basketTotal }) => {
+const Header = ({ basketItemsAmount, basketTotalPrice }) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
@@ -20,9 +20,9 @@ const Header = ({ basketItems, basketTotal }) => {
             </Link>
           </div>
           <div className="nav-section-basket-components">
-            <p className="nav-section-basket-total">{basketTotal} zł</p>
+            <p className="nav-section-basket-total">{basketTotalPrice} zł</p>
             <Link className="nav-section-link" to="/basket">
-              <CheckoutButton basketItems={basketItems} />
+              <CheckoutButton basketItemsAmount={basketItemsAmount} />
             </Link>
           </div>
           <div className="nav-theme-button-container">
