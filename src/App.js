@@ -5,24 +5,11 @@ import ProductGrid from './components/main-section/ProductGrid';
 import BasketGrid from './components/basket-section/BasketGrid';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { DarkModeContext } from './contexts/DarkModeContext';
+import { BasketContext } from './contexts/BasketContext';
 
 function App() {
   //Changes between Light and Dark mode.
   const [darkMode, setDarkMode] = useState(false);
-
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/products');
-
-      const dataJSON = await response.json();
-
-      setData(dataJSON);
-    };
-
-    fetchData();
-  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -35,6 +22,21 @@ function App() {
       document.body.classList.remove('body-dark-theme');
     };
   }, [darkMode]);
+
+  const [data, setData] = useState(null);
+
+  //Data fetch
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://localhost:4000/products');
+
+      const dataJSON = await response.json();
+
+      setData(dataJSON);
+    };
+
+    fetchData();
+  }, []);
 
   //Below displays the basket.
   const [basket, setBasket] = useState({});
@@ -105,7 +107,7 @@ function App() {
       element: (
         <>
           <Header basketItems={Object.keys(basket).length} basketTotal={totalPrice()} />
-          <ProductGrid data={data} basket={basket} addToBasket={addToBasket} />
+          <ProductGrid data={data} addToBasket={addToBasket} />
           <Footer />
         </>
       ),
@@ -121,8 +123,6 @@ function App() {
             data={data}
             decrementQuantity={decrementQuantity}
             incrementQuantity={incrementQuantity}
-            basket={basket}
-            setBasket={setBasket}
             isBasketEmpty={isBasketEmpty}
             setIsBasketEmpty={setIsBasketEmpty}
             deleteProductFromBasket={deleteProductFromBasket}
@@ -137,7 +137,9 @@ function App() {
   return (
     <div className="App">
       <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-        <RouterProvider router={router} />
+        <BasketContext.Provider value={{ basket, setBasket }}>
+          <RouterProvider router={router} />
+        </BasketContext.Provider>
       </DarkModeContext.Provider>
     </div>
   );

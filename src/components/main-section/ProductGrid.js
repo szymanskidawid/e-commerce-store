@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import CategoriesDropDown from './CategoriesDropDown';
 import ProductCard from './ProductCard';
+import { useContext } from 'react';
+import { BasketContext } from '../../contexts/BasketContext';
 
-const ProductGrid = ({ data, basket, addToBasket }) => {
+const ProductGrid = ({ data, addToBasket }) => {
+  const { basket } = useContext(BasketContext);
+
   const [isFoodSelected, setIsFoodSelected] = useState(true);
   const [isKitchenSelected, setIsKitchenSelected] = useState(true);
   const [isElectronicsSelected, setIsElectronicsSelected] = useState(true);

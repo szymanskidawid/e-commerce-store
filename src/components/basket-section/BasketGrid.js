@@ -4,20 +4,20 @@ import BasketProduct from './BasketProduct';
 import { Alert } from '@mui/material';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
+import { BasketContext } from '../../contexts/BasketContext';
 
 const BasketGrid = ({
   basketTotal,
   data,
   decrementQuantity,
   incrementQuantity,
-  basket,
-  setBasket,
   isBasketEmpty,
   setIsBasketEmpty,
   deleteProductFromBasket,
   reduceStock,
 }) => {
   const { darkMode } = useContext(DarkModeContext);
+  const { basket, setBasket } = useContext(BasketContext);
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
