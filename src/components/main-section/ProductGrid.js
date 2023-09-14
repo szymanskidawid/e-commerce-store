@@ -3,9 +3,11 @@ import CategoriesDropDown from './CategoriesDropDown';
 import ProductCard from './ProductCard';
 import { useContext } from 'react';
 import { BasketContext } from '../../contexts/BasketContext';
+import { DataContext } from '../../contexts/DataContext';
 
-const ProductGrid = ({ data, addToBasket }) => {
+const ProductGrid = ({ addToBasket }) => {
   const { basket } = useContext(BasketContext);
+  const { data } = useContext(DataContext);
 
   const [isFoodSelected, setIsFoodSelected] = useState(true);
   const [isKitchenSelected, setIsKitchenSelected] = useState(true);
