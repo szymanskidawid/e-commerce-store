@@ -5,10 +5,11 @@ import { Alert } from '@mui/material';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
+import { DataContext } from '../../contexts/DataContext';
+import { fetchData } from '../../helpers/FetchData';
 
 const BasketGrid = ({
-  basketTotal,
-  data,
+  basketTotalPrice,
   decrementQuantity,
   incrementQuantity,
   isBasketEmpty,
@@ -18,6 +19,7 @@ const BasketGrid = ({
 }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { basket, setBasket } = useContext(BasketContext);
+  const { data, setData } = useContext(DataContext);
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
@@ -33,6 +35,8 @@ const BasketGrid = ({
       setIsPurchaseComplete(true);
       setIsBasketEmpty(true);
       setBasket([]);
+
+      fetchData(setData);
 
       setTimeout(() => {
         setIsPurchaseComplete(false);
@@ -65,7 +69,7 @@ const BasketGrid = ({
         )}
       </div>
       <div className="basket-bottom-container">
-        <div className="basket-bottom-price">Total: {basketTotal} zł</div>
+        <div className="basket-bottom-price">Total: {basketTotalPrice} zł</div>
         <MainButton
           className={'basket-section-purchase-button'}
           color={'success'}

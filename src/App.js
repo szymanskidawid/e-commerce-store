@@ -6,6 +6,8 @@ import BasketGrid from './components/basket-section/BasketGrid';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { DarkModeContext } from './contexts/DarkModeContext';
 import { BasketContext } from './contexts/BasketContext';
+import { DataContext } from './contexts/DataContext';
+import { fetchData } from './helpers/FetchData';
 
 function App() {
   //Changes between Light and Dark mode.
@@ -25,17 +27,9 @@ function App() {
 
   const [data, setData] = useState(null);
 
-  //Data fetch
+  //Data fetch call
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/products');
-
-      const dataJSON = await response.json();
-
-      setData(dataJSON);
-    };
-
-    fetchData();
+    fetchData(setData);
   }, []);
 
   //Below displays the basket.
@@ -106,8 +100,8 @@ function App() {
       path: '/products',
       element: (
         <>
-          <Header basketItems={Object.keys(basket).length} basketTotal={totalPrice()} />
-          <ProductGrid data={data} addToBasket={addToBasket} />
+          <Header basketItemsAmount={Object.keys(basket).length} basketTotalPrice={totalPrice()} />
+          <ProductGrid addToBasket={addToBasket} />
           <Footer />
         </>
       ),
@@ -117,10 +111,9 @@ function App() {
       path: '/basket',
       element: (
         <>
-          <Header basketItems={Object.keys(basket).length} basketTotal={totalPrice()} />
+          <Header basketItemsAmount={Object.keys(basket).length} basketTotalPrice={totalPrice()} />
           <BasketGrid
-            basketTotal={totalPrice()}
-            data={data}
+            basketTotalPrice={totalPrice()}
             decrementQuantity={decrementQuantity}
             incrementQuantity={incrementQuantity}
             isBasketEmpty={isBasketEmpty}
@@ -138,7 +131,9 @@ function App() {
     <div className="App">
       <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
         <BasketContext.Provider value={{ basket, setBasket }}>
-          <RouterProvider router={router} />
+          <DataContext.Provider value={{ data, setData }}>
+            <RouterProvider router={router} />
+          </DataContext.Provider>
         </BasketContext.Provider>
       </DarkModeContext.Provider>
     </div>
