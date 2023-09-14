@@ -3,11 +3,9 @@ import Footer from './components/Footer';
 import Header from './components/header-section/Header';
 import ProductGrid from './components/main-section/ProductGrid';
 import BasketGrid from './components/basket-section/BasketGrid';
+import Contexts from './contexts/Contexts';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { DarkModeContext } from './contexts/DarkModeContext';
-import { BasketContext } from './contexts/BasketContext';
-import { DataContext } from './contexts/DataContext';
-import { fetchData } from './helpers/FetchData';
+import { fetchData } from './helpers/fetchData';
 
 function App() {
   //Changes between Light and Dark mode.
@@ -74,7 +72,7 @@ function App() {
   };
 
   const reduceStock = (product, quantity) => {
-    fetch(`http://localhost:4000/products/${product.id}`, {
+    return fetch(`http://localhost:4000/products/${product.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -129,13 +127,9 @@ function App() {
 
   return (
     <div className="App">
-      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-        <BasketContext.Provider value={{ basket, setBasket }}>
-          <DataContext.Provider value={{ data, setData }}>
-            <RouterProvider router={router} />
-          </DataContext.Provider>
-        </BasketContext.Provider>
-      </DarkModeContext.Provider>
+      <Contexts {...{ darkMode, setDarkMode, basket, setBasket, data, setData }}>
+        <RouterProvider router={router} />
+      </Contexts>
     </div>
   );
 }
