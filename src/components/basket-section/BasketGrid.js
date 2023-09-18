@@ -59,7 +59,6 @@ const BasketGrid = ({ basketTotalPrice }) => {
 
   return (
     <section>
-      {/* Ternary operator to change between light and dark mode classes. */}
       <div className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}>
         {Object.keys(basket).length === 0 ? (
           <div className="basket-empty">Basket is Empty</div>

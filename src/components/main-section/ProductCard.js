@@ -19,7 +19,6 @@ const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
   };
 
   return (
-    //Ternary operator to change between light and dark mode classes.
     <div
       className={`product-card-container ${
         darkMode ? 'product-card-container-dark-theme' : 'product-card-container-light-theme'

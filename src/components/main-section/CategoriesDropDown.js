@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 
 const CategoriesDropDown = ({ dropDownItems, setDropDownItems }) => {
-  //Displays categories when hovered over the main label.
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   const handleHover = (isHovered) => {

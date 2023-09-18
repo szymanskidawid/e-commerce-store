@@ -34,7 +34,6 @@ const BasketProduct = ({ id, name, quantity, stock, price }) => {
   };
 
   return (
-    //Ternary operator to change between light and dark mode classes.
     <div
       className={`basket-product-container ${
         darkMode ? 'basket-product-container-dark-theme' : 'basket-product-container-light-theme'
@@ -45,7 +44,7 @@ const BasketProduct = ({ id, name, quantity, stock, price }) => {
       </div>
       <div className="basket-product-info">
         <div>
-          <div className="basket-product-name">{name}</div>
+          <div>{name}</div>
           <div className="basket-product-stock" style={{ color: quantity === stock ? 'red' : 'green' }}>
             In stock: {stock}
           </div>
@@ -53,17 +52,17 @@ const BasketProduct = ({ id, name, quantity, stock, price }) => {
         <div className="basket-product-quantity-container">
           <RemoveCircleOutlineIcon
             className="basket-product-quantity-buttons"
-            style={{ color: quantity === 1 ? 'gray' : '' }}
+            style={{ color: quantity === 1 && 'gray' }}
             onClick={() => decrementQuantity(id)}
           />
           <p className="basket-product-quantity-number">{quantity}</p>
           <AddCircleOutlineIcon
             className="basket-product-quantity-buttons"
-            style={{ color: quantity === stock ? 'gray' : '' }}
+            style={{ color: quantity === stock && 'gray' }}
             onClick={() => incrementQuantity(id)}
           />
         </div>
-        <div className="basket-product-price">{totalPrice.toFixed(2)} zł</div>
+        <div>{totalPrice.toFixed(2)} zł</div>
       </div>
       <div className="basket-product-remove-container">
         <RemoveButton deleteProductFromBasket={() => deleteProductFromBasket(id)} />

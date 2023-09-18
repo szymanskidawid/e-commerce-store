@@ -14,7 +14,6 @@ header {
   margin-right: 2%;
   width: 45%;
   height: 100%;
-  /*background-color: blue;*/
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -24,7 +23,6 @@ header {
 .nav-section-basket-components,
 .nav-theme-button-container {
   height: 75%;
-
 }
 
 .nav-section-basket-components {

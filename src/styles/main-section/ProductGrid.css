@@ -3,7 +3,6 @@ main {
   padding: 0.5rem;
   min-height: 80vh;
   width: calc(100vw - 2rem);
-  /* background-color: purple; */
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.5s ease-in-out;
