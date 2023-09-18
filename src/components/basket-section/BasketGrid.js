@@ -8,23 +8,28 @@ import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
 import { fetchData } from '../../helpers/fetchData';
 
-const BasketGrid = ({
-  basketTotalPrice,
-  decrementQuantity,
-  incrementQuantity,
-  isBasketEmpty,
-  setIsBasketEmpty,
-  deleteProductFromBasket,
-  reduceStock,
-}) => {
+const BasketGrid = ({ basketTotalPrice }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { basket, setBasket } = useContext(BasketContext);
   const { data, setData } = useContext(DataContext);
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
+  const reduceStock = (product, quantity) => {
+    return fetch(`http://localhost:4000/products/${product.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...product,
+        stock: product.stock - quantity,
+      }),
+    });
+  };
+
   const purchaseProducts = async () => {
-    if (!isBasketEmpty) {
+    if (Object.keys(basket).length > 0) {
       const basketItems = Object.keys(basket);
 
       const products = basketItems.map((basketItemId) => {
@@ -42,8 +47,7 @@ const BasketGrid = ({
       );
 
       setIsPurchaseComplete(true);
-      setIsBasketEmpty(true);
-      setBasket([]);
+      setBasket({});
 
       fetchData(setData);
 
@@ -57,7 +61,7 @@ const BasketGrid = ({
     <section>
       {/* Ternary operator to change between light and dark mode classes. */}
       <div className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}>
-        {isBasketEmpty ? (
+        {Object.keys(basket).length === 0 ? (
           <div className="basket-empty">Basket is Empty</div>
         ) : (
           <div className="basket-scrolling-container">
@@ -68,10 +72,7 @@ const BasketGrid = ({
                 name={data.find((item) => item.id === id).name}
                 quantity={basket[id]}
                 stock={data.find((item) => item.id === id).stock}
-                decrementQuantity={decrementQuantity}
-                incrementQuantity={incrementQuantity}
                 price={data.find((item) => item.id === id).price}
-                deleteProductFromBasket={() => deleteProductFromBasket(id)}
               />
             ))}
           </div>

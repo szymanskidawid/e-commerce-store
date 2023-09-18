@@ -5,8 +5,8 @@ import { useContext } from 'react';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
 
-const ProductGrid = ({ addToBasket }) => {
-  const { basket } = useContext(BasketContext);
+const ProductGrid = () => {
+  const { basket, setBasket } = useContext(BasketContext);
   const { data } = useContext(DataContext);
 
   const [dropDownItems, setDropDownItems] = useState({
@@ -14,6 +14,16 @@ const ProductGrid = ({ addToBasket }) => {
     kitchen: true,
     electronics: true,
   });
+
+  const addToBasket = (product) => {
+    const newBasket = { ...basket };
+
+    if (newBasket[product.id] >= 1) {
+      setBasket({ ...newBasket, [product.id]: newBasket[product.id] + 1 });
+    } else {
+      setBasket({ ...newBasket, [product.id]: 1 });
+    }
+  };
 
   return (
     <main>
