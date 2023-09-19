@@ -36,14 +36,11 @@ const ProductGrid = () => {
         ) : (
           data
             .filter((product) => {
-              if (
+              return (
                 (product.category === 'Food' && dropDownItems.food) ||
                 (product.category === 'Kitchen' && dropDownItems.kitchen) ||
                 (product.category === 'Electronics' && dropDownItems.electronics)
-              ) {
-                return true;
-              }
-              return false;
+              );
             })
             .map((product) => (
               <ProductCard

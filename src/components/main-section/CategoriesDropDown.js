@@ -8,6 +8,8 @@ const CategoriesDropDown = ({ dropDownItems, setDropDownItems }) => {
     setIsDropDownVisible(isHovered);
   };
 
+  const formControlLabelItems = Object.keys(dropDownItems);
+
   return (
     <div
       className="categories-container"
@@ -20,36 +22,19 @@ const CategoriesDropDown = ({ dropDownItems, setDropDownItems }) => {
           ${isDropDownVisible ? 'visible' : ''}`}
       >
         <FormGroup>
-          <FormControlLabel
-            control={<Checkbox style={{ color: 'green' }} defaultChecked />}
-            label="Food"
-            onClick={() =>
-              setDropDownItems({
-                ...dropDownItems,
-                food: !dropDownItems.food,
-              })
-            }
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: 'green' }} defaultChecked />}
-            label="Kitchen"
-            onClick={() =>
-              setDropDownItems({
-                ...dropDownItems,
-                kitchen: !dropDownItems.kitchen,
-              })
-            }
-          />
-          <FormControlLabel
-            control={<Checkbox style={{ color: 'green' }} defaultChecked />}
-            label="Electronics"
-            onClick={() =>
-              setDropDownItems({
-                ...dropDownItems,
-                electronics: !dropDownItems.electronics,
-              })
-            }
-          />
+          {formControlLabelItems.map((item) => (
+            <FormControlLabel
+              key={item}
+              control={<Checkbox style={{ color: 'green' }} defaultChecked />}
+              label={item.charAt(0).toUpperCase() + item.slice(1)}
+              onClick={() =>
+                setDropDownItems({
+                  ...dropDownItems,
+                  [item]: !dropDownItems[item],
+                })
+              }
+            />
+          ))}
         </FormGroup>
       </div>
     </div>
