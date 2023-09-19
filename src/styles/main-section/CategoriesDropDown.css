@@ -7,7 +7,7 @@
   overflow: hidden;
   position: fixed;
   opacity: 0.9;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .categories-hover-container {
@@ -16,7 +16,7 @@
   color: white;
   background-color: rgb(9, 114, 184);
   cursor: pointer;
-  z-index: 1001;
+  z-index: 2;
 }
 
 .categories-dropdown-container {
@@ -24,6 +24,7 @@
   background-color: rgb(96, 160, 202);
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out;
+  
 }
 
 .categories-dropdown-container.visible {
