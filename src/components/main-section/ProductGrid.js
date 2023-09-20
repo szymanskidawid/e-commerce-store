@@ -26,7 +26,7 @@ const ProductGrid = () => {
   };
 
   return (
-    <main>
+    <main className="product-section-container">
       <div className="product-grid-categories">
         <CategoriesDropDown dropDownItems={dropDownItems} setDropDownItems={setDropDownItems} />
       </div>

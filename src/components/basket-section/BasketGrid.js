@@ -58,7 +58,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
   };
 
   return (
-    <section>
+    <main className="basket-section-container">
       <div className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}>
         {Object.keys(basket).length === 0 ? (
           <div className="basket-empty">Basket is Empty</div>
@@ -87,7 +87,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
         />
         {isPurchaseComplete && <Alert severity="success">Purchase successful!</Alert>}
       </div>
-    </section>
+    </main>
   );
 };
 

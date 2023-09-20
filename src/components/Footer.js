@@ -5,7 +5,7 @@ const Footer = () => {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <footer className={darkMode ? 'footer-dark-theme' : 'footer-light-theme'}>
+    <footer className={`footer-container ${darkMode ? 'footer-dark-theme' : 'footer-light-theme'}`}>
       Copyright &#169; 2023 Dawid Szymański
     </footer>
   );

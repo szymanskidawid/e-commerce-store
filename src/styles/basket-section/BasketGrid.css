@@ -1,4 +1,4 @@
-section {
+.basket-section-container {
   margin: 4rem 0.5rem 0.5rem 0.5rem;
   padding: 1rem;
   min-height: 80vh;
@@ -55,7 +55,7 @@ section {
 
 /* Responsive Web Design */
 @media screen and (max-width: 1000px) {
-  section {
+  .basket-section-container {
     padding: 0.5rem;
   }
 
