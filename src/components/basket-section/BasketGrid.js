@@ -59,7 +59,9 @@ const BasketGrid = ({ basketTotalPrice }) => {
 
   return (
     <main className="basket-section-container">
-      <div className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}>
+      <section
+        className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}
+      >
         {Object.keys(basket).length === 0 ? (
           <div className="basket-empty">Basket is Empty</div>
         ) : (
@@ -76,7 +78,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
             ))}
           </div>
         )}
-      </div>
+      </section>
       <div className="basket-bottom-container">
         <div className="basket-bottom-price">Total: {basketTotalPrice} zł</div>
         <MainButton

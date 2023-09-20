@@ -30,7 +30,7 @@ const ProductGrid = () => {
       <div className="product-grid-categories">
         <CategoriesDropDown dropDownItems={dropDownItems} setDropDownItems={setDropDownItems} />
       </div>
-      <div className="product-grid-container">
+      <section className="product-grid-container">
         {data === null ? (
           <div>Loading...</div>
         ) : (
@@ -55,7 +55,7 @@ const ProductGrid = () => {
               />
             ))
         )}
-      </div>
+      </section>
     </main>
   );
 };

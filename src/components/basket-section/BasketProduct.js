@@ -55,7 +55,7 @@ const BasketProduct = ({ id, name, quantity, stock, price }) => {
             style={{ color: quantity === 1 && 'gray' }}
             onClick={() => decrementQuantity(id)}
           />
-          <p className="basket-product-quantity-number">{quantity}</p>
+          <div className="basket-product-quantity-number">{quantity}</div>
           <AddCircleOutlineIcon
             className="basket-product-quantity-buttons"
             style={{ color: quantity === stock && 'gray' }}

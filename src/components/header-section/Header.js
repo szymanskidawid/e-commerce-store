@@ -19,7 +19,7 @@ const Header = ({ basketItemsAmount, basketTotalPrice }) => {
           </Link>
         </div>
         <div className="nav-section-basket-components">
-          <p className="nav-section-basket-total">{basketTotalPrice} zł</p>
+          <div className="nav-section-basket-total">{basketTotalPrice} zł</div>
           <Link className="nav-section-link" to="/basket">
             <CheckoutButton basketItemsAmount={basketItemsAmount} />
           </Link>
