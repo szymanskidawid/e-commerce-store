@@ -6,30 +6,30 @@ import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
 
-const BasketProduct = ({ id, name, quantity, stock, price }) => {
+const BasketProduct = ({ _id, name, quantity, stock, price }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { basket, setBasket } = useContext(BasketContext);
   const { data } = useContext(DataContext);
 
   const totalPrice = price * quantity;
 
-  const decrementQuantity = (id) => {
+  const decrementQuantity = (_id) => {
     const newBasket = { ...basket };
-    if (newBasket[id] > 1) {
-      setBasket({ ...newBasket, [id]: newBasket[id] - 1 });
+    if (newBasket[_id] > 1) {
+      setBasket({ ...newBasket, [_id]: newBasket[_id] - 1 });
     }
   };
 
-  const incrementQuantity = (id) => {
+  const incrementQuantity = (_id) => {
     const newBasket = { ...basket };
-    if (newBasket[id] < data.find((item) => item.id === id).stock) {
-      setBasket({ ...newBasket, [id]: newBasket[id] + 1 });
+    if (newBasket[_id] < data.find((item) => item._id === _id).stock) {
+      setBasket({ ...newBasket, [_id]: newBasket[_id] + 1 });
     }
   };
 
-  const deleteProductFromBasket = (id) => {
+  const deleteProductFromBasket = (_id) => {
     const newBasket = { ...basket };
-    delete newBasket[id];
+    delete newBasket[_id];
     setBasket(newBasket);
   };
 
@@ -53,19 +53,19 @@ const BasketProduct = ({ id, name, quantity, stock, price }) => {
           <RemoveCircleOutlineIcon
             className="basket-product-quantity-buttons"
             style={{ color: quantity === 1 && 'gray' }}
-            onClick={() => decrementQuantity(id)}
+            onClick={() => decrementQuantity(_id)}
           />
           <div className="basket-product-quantity-number">{quantity}</div>
           <AddCircleOutlineIcon
             className="basket-product-quantity-buttons"
             style={{ color: quantity === stock && 'gray' }}
-            onClick={() => incrementQuantity(id)}
+            onClick={() => incrementQuantity(_id)}
           />
         </div>
         <div>{totalPrice.toFixed(2)} zł</div>
       </div>
       <div className="basket-product-remove-container">
-        <RemoveButton deleteProductFromBasket={() => deleteProductFromBasket(id)} />
+        <RemoveButton deleteProductFromBasket={() => deleteProductFromBasket(_id)} />
       </div>
     </div>
   );

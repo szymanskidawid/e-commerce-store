@@ -26,8 +26,8 @@ function App() {
 
   const totalPrice = () => {
     let price = 0;
-    Object.keys(basket).forEach((id) => {
-      price += data.find((item) => item.id === id).price * basket[id];
+    Object.keys(basket).forEach((_id) => {
+      price += data.find((item) => item._id === _id).price * basket[_id];
     });
     return price.toFixed(2);
   };

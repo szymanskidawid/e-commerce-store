@@ -16,7 +16,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const reduceStock = (product, quantity) => {
-    return fetch(`http://localhost:4000/products/${product.id}`, {
+    return fetch(`http://localhost:4000/${product._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
       const basketItems = Object.keys(basket);
 
       const products = basketItems.map((basketItemId) => {
-        return data.find((item) => item.id === basketItemId);
+        return data.find((item) => item._id === basketItemId);
       });
 
       const quantities = basketItems.map((basketItemId) => {
@@ -66,14 +66,14 @@ const BasketGrid = ({ basketTotalPrice }) => {
           <div className="basket-empty">Basket is Empty</div>
         ) : (
           <div className="basket-scrolling-container">
-            {Object.keys(basket).map((id) => (
+            {Object.keys(basket).map((_id) => (
               <BasketProduct
-                id={id}
-                key={id}
-                name={data.find((item) => item.id === id).name}
-                quantity={basket[id]}
-                stock={data.find((item) => item.id === id).stock}
-                price={data.find((item) => item.id === id).price}
+                _id={_id}
+                key={_id}
+                name={data.find((item) => item._id === _id).name}
+                quantity={basket[_id]}
+                stock={data.find((item) => item._id === _id).stock}
+                price={data.find((item) => item._id === _id).price}
               />
             ))}
           </div>

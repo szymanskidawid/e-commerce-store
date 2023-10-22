@@ -18,10 +18,10 @@ const ProductGrid = () => {
   const addToBasket = (product) => {
     const newBasket = { ...basket };
 
-    if (newBasket[product.id] >= 1) {
-      setBasket({ ...newBasket, [product.id]: newBasket[product.id] + 1 });
+    if (newBasket[product._id] >= 1) {
+      setBasket({ ...newBasket, [product._id]: newBasket[product._id] + 1 });
     } else {
-      setBasket({ ...newBasket, [product.id]: 1 });
+      setBasket({ ...newBasket, [product._id]: 1 });
     }
   };
 
@@ -44,11 +44,11 @@ const ProductGrid = () => {
             })
             .map((product) => (
               <ProductCard
-                key={product.id}
+                key={product._id}
                 name={product.name}
                 price={product.price}
                 stock={product.stock}
-                isInBasket={product.id in basket}
+                isInBasket={product._id in basket}
                 addToBasket={() => {
                   addToBasket(product);
                 }}
