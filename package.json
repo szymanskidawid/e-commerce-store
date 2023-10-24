@@ -28,10 +28,13 @@
   },
 
   "scripts": {
-    "start": "ESLINT_PLUGIN_DISABLE=true react-scripts start",
-    "build": "ESLINT_PLUGIN_DISABLE=true react-scripts build",
-    "test": "ESLINT_PLUGIN_DISABLE=true react-scripts test",
-    "eject": "ESLINT_PLUGIN_DISABLE=true react-scripts eject"
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "build": "Dreact-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --cache \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --cache --fix \"src/**/*.{js,jsx,ts,tsx}\""
   },
 
   "eslintConfig": {
@@ -53,7 +56,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0",
     "prettier": "^3.0.3"
   },
   "husky": {
