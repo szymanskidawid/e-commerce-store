@@ -10,6 +10,11 @@
   font-size: 1.2rem !important;
 }
 
+.products-section-restock-button {
+  width: 250px;
+  height: 38px;
+}
+
 /* Responsive Web Design */
 @media screen and (max-width: 640px) {
   .nav-section-products-button {

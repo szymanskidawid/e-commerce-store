@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import { useContext } from 'react';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
+import MainButton from '../buttons/MainButton';
 
 const ProductGrid = () => {
   const { basket, setBasket } = useContext(BasketContext);
@@ -25,10 +26,27 @@ const ProductGrid = () => {
     }
   };
 
+  const restockProducts = () => {
+    return fetch(`https://e-commerce-store-backend.onrender.com/restock`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  };
+
   return (
     <main className="product-section-container">
-      <div className="product-grid-categories">
-        <CategoriesDropDown dropDownItems={dropDownItems} setDropDownItems={setDropDownItems} />
+      <div className="product-grid-top-buttons">
+        <div className="product-grid-categories">
+          <CategoriesDropDown dropDownItems={dropDownItems} setDropDownItems={setDropDownItems} />
+        </div>
+        <MainButton
+          className={'products-section-restock-button'}
+          color={'success'}
+          text={'Restock All Products'}
+          onClick={restockProducts}
+        />
       </div>
       <section className="product-grid-container">
         {data === null ? (

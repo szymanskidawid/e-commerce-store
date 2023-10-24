@@ -16,6 +16,12 @@
   justify-items: center;
 }
 
+.product-grid-top-buttons {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+}
+
 .product-grid-categories {
   display: flex;
 }
