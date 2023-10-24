@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Page from '../components/Page';
 import ProductGrid from '../components/main-section/ProductGrid';
 import BasketGrid from '../components/basket-section/BasketGrid';
@@ -9,6 +9,11 @@ const Router = ({ totalPrice }) => {
   const { basket } = useContext(BasketContext);
 
   const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Navigate to="/products" />,
+    },
+
     {
       path: '/products',
       element: (
