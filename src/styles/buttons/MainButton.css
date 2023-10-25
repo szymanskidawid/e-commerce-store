@@ -11,6 +11,7 @@
 }
 
 .products-section-restock-button {
+  margin-right: 3em !important;
   width: 250px;
   height: 38px;
 }
@@ -20,7 +21,12 @@
   .nav-section-products-button {
     font-size: 0.9em !important;
   }
+
   .product-section-add-button {
     font-size: 0.7em !important;
+  }
+
+  .products-section-restock-button {
+    margin-right: 0 !important;
   }
 }

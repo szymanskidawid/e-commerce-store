@@ -43,7 +43,7 @@ const ProductGrid = () => {
         </div>
         <MainButton
           className={'products-section-restock-button'}
-          color={'success'}
+          color={'secondary'}
           text={'Restock All Products'}
           onClick={restockProducts}
         />
