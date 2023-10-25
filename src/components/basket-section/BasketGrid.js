@@ -16,6 +16,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
   const reduceStock = (product, quantity) => {
+    //return fetch(`http://localhost:4000/${product._id}`, {
     return fetch(`https://e-commerce-store-backend.onrender.com/${product._id}`, {
       method: 'PUT',
       headers: {

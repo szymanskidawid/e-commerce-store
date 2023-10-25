@@ -8,7 +8,7 @@ import MainButton from '../buttons/MainButton';
 
 const ProductGrid = () => {
   const { basket, setBasket } = useContext(BasketContext);
-  const { data } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
 
   const [dropDownItems, setDropDownItems] = useState({
     food: true,
@@ -26,13 +26,24 @@ const ProductGrid = () => {
     }
   };
 
-  const restockProducts = () => {
-    return fetch(`https://e-commerce-store-backend.onrender.com/restock`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const restockProducts = async () => {
+    let newData = [];
+
+    try {
+      setData(null);
+
+      //const newDataRes = await fetch(`http://localhost:4000/restock`, {
+      const newDataRes = await fetch(`https://e-commerce-store-backend.onrender.com/restock`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      newData = await newDataRes.json();
+    } finally {
+      setData(newData);
+    }
   };
 
   return (
