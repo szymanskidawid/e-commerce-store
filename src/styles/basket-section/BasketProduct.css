@@ -6,18 +6,19 @@
   flex-direction: row;
   align-items: center;
   animation: fadeIn 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 .basket-product-picture {
-  height: 100%;
-  width:  15%;
+  width: 15%;
+  height: auto;
   display: flex;
   align-items: center;
 }
 
 .basket-product-picture img {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .basket-product-info {
