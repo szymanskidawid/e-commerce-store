@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
+import ProductImage from '../../shared/ProductImage';
 
 const BasketProduct = ({ _id, name, quantity, stock, price }) => {
   const { darkMode } = useContext(DarkModeContext);
@@ -40,7 +41,7 @@ const BasketProduct = ({ _id, name, quantity, stock, price }) => {
       }`}
     >
       <div className="basket-product-picture">
-        <img src="https://picsum.photos/150/62" />
+        <ProductImage productName={name} />
       </div>
       <div className="basket-product-info">
         <div>
