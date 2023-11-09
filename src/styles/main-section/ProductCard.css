@@ -52,7 +52,7 @@
   background-color: red;
 }
 
-.product-card-purchase-successful {
+.product-card-added-to-basket-popup {
   position: absolute;
   bottom: -100%;
   right: 0;
@@ -72,10 +72,10 @@
   .product-card-container {
     width: 85%;
     height: auto;
-    grid-template-rows: 1fr 5fr 2fr;
+    aspect-ratio: 3 / 2;
   }
 
-  .product-card-purchase-successful {
+  .product-card-added-to-basket-popup {
     bottom: -130%;
   }
 }
