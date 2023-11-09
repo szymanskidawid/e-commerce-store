@@ -8,7 +8,7 @@ import MainButton from '../buttons/MainButton';
 
 const ProductGrid = () => {
   const { basket, setBasket } = useContext(BasketContext);
-  const { data, setData } = useContext(DataContext);
+  const { allProducts, setAllProducts } = useContext(DataContext);
 
   const [dropDownItems, setDropDownItems] = useState({
     food: true,
@@ -30,7 +30,7 @@ const ProductGrid = () => {
     let newData = [];
 
     try {
-      setData(null);
+      setAllProducts(null);
 
       //const newDataRes = await fetch(`http://localhost:4000/restock`, {
       const newDataRes = await fetch(`https://e-commerce-store-backend.onrender.com/restock`, {
@@ -42,7 +42,7 @@ const ProductGrid = () => {
 
       newData = await newDataRes.json();
     } finally {
-      setData(newData);
+      setAllProducts(newData);
     }
   };
 
@@ -60,10 +60,10 @@ const ProductGrid = () => {
         />
       </div>
       <section className="product-grid-container">
-        {data === null ? (
+        {allProducts === null ? (
           <div>Loading...</div>
         ) : (
-          data
+          allProducts
             .filter((product) => {
               return (
                 (product.category === 'Food' && dropDownItems.food) ||

@@ -10,7 +10,7 @@ import ProductImage from '../../shared/ProductImage';
 const BasketProduct = ({ _id, name, quantity, stock, price }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { basket, setBasket } = useContext(BasketContext);
-  const { data } = useContext(DataContext);
+  const { allProducts } = useContext(DataContext);
 
   const totalPrice = price * quantity;
 
@@ -23,7 +23,7 @@ const BasketProduct = ({ _id, name, quantity, stock, price }) => {
 
   const incrementQuantity = (_id) => {
     const newBasket = { ...basket };
-    if (newBasket[_id] < data.find((item) => item._id === _id).stock) {
+    if (newBasket[_id] < allProducts.find((item) => item._id === _id).stock) {
       setBasket({ ...newBasket, [_id]: newBasket[_id] + 1 });
     }
   };

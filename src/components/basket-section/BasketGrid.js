@@ -6,17 +6,16 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
-import { fetchData } from '../../helpers/fetchData';
+import { fetchAllProducts } from '../../helpers/fetchAllProducts';
 
 const BasketGrid = ({ basketTotalPrice }) => {
   const { darkMode } = useContext(DarkModeContext);
   const { basket, setBasket } = useContext(BasketContext);
-  const { data, setData } = useContext(DataContext);
+  const { allProducts, setAllProducts } = useContext(DataContext);
 
   const [isPurchaseComplete, setIsPurchaseComplete] = useState(false);
 
-  const reduceStock = (product, quantity) => {
-    //return fetch(`http://localhost:4000/${product._id}`, {
+  const reduceStock = (product, quantityInBasket) => {
     return fetch(`https://e-commerce-store-backend.onrender.com/${product._id}`, {
       method: 'PUT',
       headers: {
@@ -24,7 +23,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
       },
       body: JSON.stringify({
         ...product,
-        stock: product.stock - quantity,
+        stock: product.stock - quantityInBasket,
       }),
     });
   };
@@ -33,24 +32,24 @@ const BasketGrid = ({ basketTotalPrice }) => {
     if (Object.keys(basket).length > 0) {
       const basketItems = Object.keys(basket);
 
-      const products = basketItems.map((basketItemId) => {
-        return data.find((item) => item._id === basketItemId);
+      const basketItemsInAllProducts = basketItems.map((basketItemId) => {
+        return allProducts.find((item) => item._id === basketItemId);
       });
 
-      const quantities = basketItems.map((basketItemId) => {
+      const quantitiesOfBasketItems = basketItems.map((basketItemId) => {
         return basket[basketItemId];
       });
 
       await Promise.all(
-        products.map((product, i) => {
-          return reduceStock(product, quantities[i]);
+        basketItemsInAllProducts.map((product, i) => {
+          return reduceStock(product, quantitiesOfBasketItems[i]);
         })
       );
 
       setIsPurchaseComplete(true);
       setBasket({});
 
-      fetchData(setData);
+      fetchAllProducts(setAllProducts);
 
       setTimeout(() => {
         setIsPurchaseComplete(false);
@@ -58,12 +57,16 @@ const BasketGrid = ({ basketTotalPrice }) => {
     }
   };
 
+  const checkIfBasketIsEmpty = () => {
+    return Object.keys(basket).length === 0;
+  };
+
   return (
     <main className="basket-section-container">
       <section
         className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}
       >
-        {Object.keys(basket).length === 0 ? (
+        {checkIfBasketIsEmpty() ? (
           <div className="basket-empty">Basket is Empty</div>
         ) : (
           <div className="basket-scrolling-container">
@@ -71,10 +74,10 @@ const BasketGrid = ({ basketTotalPrice }) => {
               <BasketProduct
                 _id={_id}
                 key={_id}
-                name={data.find((item) => item._id === _id).name}
+                name={allProducts.find((item) => item._id === _id).name}
                 quantity={basket[_id]}
-                stock={data.find((item) => item._id === _id).stock}
-                price={data.find((item) => item._id === _id).price}
+                stock={allProducts.find((item) => item._id === _id).stock}
+                price={allProducts.find((item) => item._id === _id).price}
               />
             ))}
           </div>

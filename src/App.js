@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ContextProviders from './contexts/ContextProviders';
-import { fetchData } from './helpers/fetchData';
+import { fetchAllProducts } from './helpers/fetchAllProducts';
 import Router from './helpers/Router';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [data, setData] = useState(null);
+  const [allProducts, setAllProducts] = useState(null);
   const [basket, setBasket] = useState({});
 
   useEffect(() => {
@@ -21,20 +21,20 @@ function App() {
   }, [darkMode]);
 
   useEffect(() => {
-    fetchData(setData);
+    fetchAllProducts(setAllProducts);
   }, []);
 
   const totalPrice = () => {
     let price = 0;
     Object.keys(basket).forEach((_id) => {
-      price += data.find((item) => item._id === _id).price * basket[_id];
+      price += allProducts.find((item) => item._id === _id).price * basket[_id];
     });
     return price.toFixed(2);
   };
 
   return (
     <div className="App">
-      <ContextProviders {...{ darkMode, setDarkMode, basket, setBasket, data, setData }}>
+      <ContextProviders {...{ darkMode, setDarkMode, basket, setBasket, allProducts, setAllProducts }}>
         <Router totalPrice={totalPrice} />
       </ContextProviders>
     </div>

@@ -46,7 +46,7 @@ const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
           <div className="product-card-out-of-stock">OUT OF STOCK</div>
         )}
         {isAddedToBasket && (
-          <Alert className="product-card-purchase-successful" severity="success">
+          <Alert className="product-card-added-to-basket-popup" severity="success">
             Added
           </Alert>
         )}
