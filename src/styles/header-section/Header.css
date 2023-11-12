@@ -22,7 +22,8 @@
 .nav-products-button-container,
 .nav-section-basket-components,
 .nav-theme-button-container {
-  height: 75%;
+  height: 100%;
+  align-items: center;
 }
 
 .nav-section-basket-components {

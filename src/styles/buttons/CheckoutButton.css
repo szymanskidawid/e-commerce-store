@@ -1,12 +1,6 @@
 .checkout-button {
   margin: 0 10px 0 10px !important;
-  width: auto;
   height: 100%;
-  border: 2px solid black;
-  border-radius: 0.6rem;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
 }
 
 .checkout-button-products-amount-label {
@@ -20,4 +14,11 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* Responsive Web Design */
+@media screen and (max-width: 640px) {
+  .checkout-button {
+    height: 35px;
+  }
 }

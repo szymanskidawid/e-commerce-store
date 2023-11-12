@@ -1,8 +1,10 @@
 .light-dark-mode-button {
-  width: auto;
   height: 100%;
-  border: 2px solid black;
-  border-radius: 0.6rem;
-  text-align: center;
-  cursor: pointer;
+}
+
+/* Responsive Web Design */
+@media screen and (max-width: 640px) {
+  .light-dark-mode-button {
+    height: 35px;
+  }
 }
