@@ -1,6 +1,8 @@
+import LogoImage from '../../images/websiteLogo.jpg';
+
 const Logo = () => (
   <div className="website-logo">
-    <img src="https://picsum.photos/150/60" />
+    <img src={LogoImage} alt="Website Logo" />
   </div>
 );
 
