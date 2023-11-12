@@ -19,7 +19,7 @@
 /* Responsive Web Design */
 @media screen and (max-width: 640px) {
   .nav-section-products-button {
-    font-size: 0.9em !important;
+    font-size: 0.8em !important;
   }
 
   .product-section-add-button {
@@ -28,5 +28,7 @@
 
   .products-section-restock-button {
     margin-right: 0 !important;
+    width: 160px;
+    line-height: 1.2 !important;
   }
 }
