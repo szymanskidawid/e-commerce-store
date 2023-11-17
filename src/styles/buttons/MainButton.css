@@ -23,19 +23,13 @@
   }
 
   .product-section-add-button {
-    font-size: 0.7em !important;
+    font-size: 0.6em !important;
   }
 
   .products-section-restock-button {
     margin-right: 0 !important;
     width: 160px;
     line-height: 1.2 !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .product-section-add-button {
-    font-size: 0.6em !important;
   }
 }
 
