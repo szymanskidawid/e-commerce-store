@@ -1,7 +1,7 @@
 .basket-section-container {
   margin: 4rem 0.5rem 0.5rem 0.5rem;
   padding: 1rem;
-  min-height: 85vh;
+  height: calc(100vh - 10vh - 120px);
   width: calc(100vw - 3rem);
 }
 
@@ -69,3 +69,10 @@
     padding-right: 2em;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .basket-section-container {
+    height: calc(100vh - 5vh - 120px);
+  }
+}
+
