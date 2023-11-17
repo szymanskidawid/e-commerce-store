@@ -79,3 +79,9 @@
     bottom: -130%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .product-card-added-to-basket-popup {
+    bottom: -200%;
+  }
+}
