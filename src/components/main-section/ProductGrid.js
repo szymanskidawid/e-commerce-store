@@ -11,9 +11,11 @@ const ProductGrid = () => {
   const { allProducts, setAllProducts } = useContext(DataContext);
 
   const [dropDownItems, setDropDownItems] = useState({
+    clothes: true,
+    drink: true,
+    electronics: true,
     food: true,
     kitchen: true,
-    electronics: true,
   });
 
   const addToBasket = (product) => {
@@ -66,9 +68,11 @@ const ProductGrid = () => {
           allProducts
             .filter((product) => {
               return (
+                (product.category === 'Clothes' && dropDownItems.clothes) ||
+                (product.category === 'Drink' && dropDownItems.drink) ||
+                (product.category === 'Electronics' && dropDownItems.electronics) ||
                 (product.category === 'Food' && dropDownItems.food) ||
-                (product.category === 'Kitchen' && dropDownItems.kitchen) ||
-                (product.category === 'Electronics' && dropDownItems.electronics)
+                (product.category === 'Kitchen' && dropDownItems.kitchen)
               );
             })
             .map((product) => (
