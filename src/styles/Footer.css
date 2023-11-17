@@ -18,6 +18,7 @@
 /* Responsive Web Design */
 @media screen and (max-width: 640px) {
   .footer-container {
+    height: 5vh;
     font-size: 1rem;
   }
 }

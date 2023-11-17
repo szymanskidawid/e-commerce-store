@@ -11,12 +11,10 @@ const CategoriesDropDown = ({ dropDownItems, setDropDownItems }) => {
   const formControlLabelItems = Object.keys(dropDownItems);
 
   return (
-    <div
-      className="categories-container"
-      onMouseEnter={() => handleHover(true)}
-      onMouseLeave={() => handleHover(false)}
-    >
-      <div className="categories-hover-container">Categories</div>
+    <div className="categories-container" onMouseLeave={() => handleHover(false)}>
+      <div className="categories-hover-container" onMouseEnter={() => handleHover(true)}>
+        Categories
+      </div>
       <div
         className={`categories-dropdown-container 
           ${isDropDownVisible ? 'visible' : ''}`}

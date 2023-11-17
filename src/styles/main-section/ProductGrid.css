@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.5s ease-in-out;
+  position: relative;
 }
 
 .product-grid-container {
@@ -22,6 +23,7 @@
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
+  z-index: 2;
 }
 
 .product-grid-categories {
@@ -50,7 +52,7 @@
 @media screen and (max-width: 640px) {
   .product-grid-container {
     font-size: 0.6rem;
-    row-gap: 3.5rem;
+    row-gap: 2rem;
   }
 
   .product-grid-categories {
