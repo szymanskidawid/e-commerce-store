@@ -35,12 +35,12 @@
 
 @media screen and (max-width: 480px) {
   .product-section-add-button {
-    font-size: 0.7em !important;
+    font-size: 0.6em !important;
   }
 }
 
 @media screen and (max-width: 380px) {
   .product-section-add-button {
-    font-size: 0.5em !important;
+    font-size: 0.4em !important;
   }
 }
