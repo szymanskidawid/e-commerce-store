@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import { BasketContext } from '../../contexts/BasketContext';
 import { DataContext } from '../../contexts/DataContext';
-import ProductImage from '../../shared/ProductImage';
 
 const BasketProduct = ({ _id, name, quantity, stock, price }) => {
   const { darkMode } = useContext(DarkModeContext);
@@ -40,9 +39,7 @@ const BasketProduct = ({ _id, name, quantity, stock, price }) => {
         darkMode ? 'basket-product-container-dark-theme' : 'basket-product-container-light-theme'
       }`}
     >
-      <div className="basket-product-picture">
-        <ProductImage productName={name} />
-      </div>
+      <div className="basket-product-picture">TEMP</div>
       <div className="basket-product-info">
         <div>
           <div>{name}</div>

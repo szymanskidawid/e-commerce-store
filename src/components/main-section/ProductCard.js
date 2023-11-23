@@ -3,7 +3,6 @@ import MainButton from '../buttons/MainButton';
 import { Alert } from '@mui/material';
 import { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
-import ProductImage from '../../shared/ProductImage';
 
 const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
   const { darkMode } = useContext(DarkModeContext);
@@ -26,9 +25,7 @@ const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
       }`}
     >
       <div className="product-card-name">{name}</div>
-      <div className="product-card-picture">
-        <ProductImage productName={name} />
-      </div>
+      <div className="product-card-picture">TEMP</div>
       <div className="product-card-bottom">
         <div className="product-card-price">{price.toFixed(2)}</div>
         {stock > 0 ? (

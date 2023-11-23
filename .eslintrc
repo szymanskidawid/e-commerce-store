@@ -21,7 +21,7 @@
     "react-hooks/exhaustive-deps": "off",
     "react/prop-types": 0,
     "allow-parens": 0,
-    "linebreak-style": 0,
+    "linebreak-style": "off"
   },
   "parserOptions": {
     "sourceType": "module",
