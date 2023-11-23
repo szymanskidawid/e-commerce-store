@@ -10,7 +10,7 @@ const Header = ({ basketItemsAmount, basketTotalPrice }) => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
-    <header className={`header-container ${darkMode ? 'header-dark-theme' : 'header-light-theme'}`}>
+    <header className={`header-container header-${darkMode ? 'dark' : 'light'}-theme`}>
       <Logo />
       <nav className="nav-container">
         <div className="nav-products-button-container">

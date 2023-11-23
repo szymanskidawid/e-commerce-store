@@ -16,7 +16,7 @@ const LightDarkButton = ({ color, onClick }) => {
   };
 
   return (
-    <Button className="light-dark-mode-button" variant="contained" color={color} onClick={buttonClick}>
+    <Button variant="contained" color={color} onClick={buttonClick}>
       {lightModeIcon ? (
         <LightModeIcon style={{ fontSize: 30, color: 'white' }} />
       ) : (

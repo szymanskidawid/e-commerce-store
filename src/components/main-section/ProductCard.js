@@ -19,11 +19,7 @@ const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
   };
 
   return (
-    <div
-      className={`product-card-container ${
-        darkMode ? 'product-card-container-dark-theme' : 'product-card-container-light-theme'
-      }`}
-    >
+    <div className={`product-card-container product-card-container-${darkMode ? 'dark' : 'light'}-theme`}>
       <div className="product-card-name">{name}</div>
       <div className="product-card-picture">TEMP</div>
       <div className="product-card-bottom">

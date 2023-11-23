@@ -63,9 +63,7 @@ const BasketGrid = ({ basketTotalPrice }) => {
 
   return (
     <main className="basket-section-container">
-      <section
-        className={`scrolling-window ${darkMode ? 'scrolling-window-dark-theme' : 'scrolling-window-light-theme'}`}
-      >
+      <section className={`scrolling-window scrolling-window-${darkMode ? 'dark' : 'light'}-theme`}>
         {checkIfBasketIsEmpty() ? (
           <div className="basket-empty">Basket is Empty</div>
         ) : (

@@ -21,11 +21,7 @@ const ProductGrid = () => {
   const addToBasket = (product) => {
     const newBasket = { ...basket };
 
-    if (newBasket[product._id] >= 1) {
-      setBasket({ ...newBasket, [product._id]: newBasket[product._id] + 1 });
-    } else {
-      setBasket({ ...newBasket, [product._id]: 1 });
-    }
+    setBasket({ ...newBasket, [product._id]: newBasket[product._id] >= 1 ? newBasket[product._id] + 1 : 1 });
   };
 
   const restockProducts = async () => {
@@ -34,7 +30,6 @@ const ProductGrid = () => {
     try {
       setAllProducts(null);
 
-      //const newDataRes = await fetch(`http://localhost:4000/restock`, {
       const newDataRes = await fetch(`https://e-commerce-store-backend.onrender.com/restock`, {
         method: 'PUT',
         headers: {

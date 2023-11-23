@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './styles/header-section/Header.css';
 import './styles/header-section/Logo.css';
 import './styles/buttons/CheckoutButton.css';
-import './styles/buttons/LightDarkButton.css';
 import './styles/buttons/RemoveButton.css';
 import './styles/main-section/CategoriesDropDown.css';
 import './styles/main-section/ProductGrid.css';
