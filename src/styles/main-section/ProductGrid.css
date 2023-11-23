@@ -24,6 +24,7 @@
   justify-content: space-between;
   position: fixed;
   z-index: 2;
+  pointer-events: none;
 }
 
 .product-grid-categories {
