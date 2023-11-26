@@ -32,12 +32,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-end;
   animation: fadeIn 0.5s ease-in-out;
 }
 
 .basket-bottom-price {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   width: auto;
   height: 100%;
   font-size: 2em;
@@ -73,6 +72,10 @@
 @media screen and (max-width: 640px) {
   .basket-section-container {
     height: calc(100vh - 5vh - 120px);
+  }
+
+  .basket-bottom-price {
+    font-size: 1.5em;
   }
 }
 
