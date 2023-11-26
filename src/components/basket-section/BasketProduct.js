@@ -35,7 +35,9 @@ const BasketProduct = ({ _id, name, quantity, stock, price }) => {
 
   return (
     <div className={`basket-product-container basket-product-container-${darkMode ? 'dark' : 'light'}-theme`}>
-      <div className="basket-product-picture">TEMP</div>
+      <div className="basket-product-picture">
+        <img src={`../images/${name}.jpg`} alt={name} />
+      </div>
       <div className="basket-product-info">
         <div>
           <div>{name}</div>

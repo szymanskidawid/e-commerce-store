@@ -1,8 +1,6 @@
-import LogoImage from '../../images/websiteLogo.jpg';
-
 const Logo = () => (
   <div className="website-logo">
-    <img src={LogoImage} alt="Website Logo" />
+    <img src="../images/websiteLogo.jpg" alt="DawidDeals" />
   </div>
 );
 

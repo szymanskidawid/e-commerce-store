@@ -21,9 +21,11 @@ const ProductCard = ({ name, price, stock, isInBasket, addToBasket }) => {
   return (
     <div className={`product-card-container product-card-container-${darkMode ? 'dark' : 'light'}-theme`}>
       <div className="product-card-name">{name}</div>
-      <div className="product-card-picture">TEMP</div>
+      <div className="product-card-picture">
+        <img src={`../images/${name}.jpg`} alt={name} />
+      </div>
       <div className="product-card-bottom">
-        <div className="product-card-price">{price.toFixed(2)}</div>
+        <div className="product-card-price">{price.toFixed(2)} zł</div>
         {stock > 0 ? (
           isInBasket ? (
             <div className="product-card-in-basket">IN BASKET</div>
