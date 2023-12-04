@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
@@ -48,12 +48,12 @@
 /* Light and Dark Theme classes*/
 .header-light-theme {
   background-color: var(--color-light);
-  border-bottom: 0.1rem solid black;
+  border-bottom: 1px solid black;
 }
 
 .header-dark-theme {
   background-color: var(--color-dark);
-  border-bottom: 0.1rem solid white;
+  border-bottom: 1px solid white;
 }
 
 /* Responsive Web Design */

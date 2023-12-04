@@ -1,7 +1,7 @@
 .product-section-container {
-  margin: 4rem 0.5rem 0.5rem 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
   padding: 0.5rem;
-  min-height: 80vh;
+  min-height: calc(100vh - 62px - 10vh - 1.5rem);
   width: calc(100vw - 2rem);
   display: flex;
   flex-direction: column;
@@ -51,6 +51,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .product-section-container {
+    min-height: calc(100vh - 62px - 5vh - 1.5rem);
+  }
+
   .product-grid-container {
     font-size: 0.6rem;
     row-gap: 3rem;

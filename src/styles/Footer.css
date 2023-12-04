@@ -8,11 +8,11 @@
 }
 
 .footer-light-theme {
-  border-top: 0.1rem solid black;
+  border-top: 1px solid black;
 }
 
 .footer-dark-theme {
-  border-top: 0.1rem solid white;
+  border-top: 1px solid white;
 }
 
 /* Responsive Web Design */
