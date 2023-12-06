@@ -21,6 +21,7 @@ E-Commerce-Store project has been created in order to use my React knowledge in 
 It was a plan from the very start to also have a database that will contain all products available for purchase.
 
 Main challenge for this project was to keep the code clean and readable. There are a lot of states and props used throughout the project that are passed around the application. At the very start I did not use any state management tool which created a lot of mess in the project. Implementing ContextAPI has helped a lot to reduce amount of code and made it much more readable.
+
 Another challenge that I have faced was proper implementation of RESTful API and making front-end update diplayed data from back-end without reloading the page. I have not done these steps before which required a lot of research plus trial and error in order to find solutions for all problems.
 
 For this project, I have created my front-end using React.js together with libraries MaterialUI, React Render and ContextAPI.
