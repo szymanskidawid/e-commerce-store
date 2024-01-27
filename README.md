@@ -12,7 +12,9 @@ For testing purposes, stock can be refilled using a button.
 Project has been finished and tested in order to find any small problems that may have gone under the radar.
 
 # GIFs highlighting some functionalities (click for zoom)
-
+<img src="https://github.com/szymanskidawid/e-commerce-store/assets/17786383/731ad2f2-5d72-44fb-bb69-0b3c79909dcf" alt="project_GIF_1" width="250">
+<img src="https://github.com/szymanskidawid/e-commerce-store/assets/17786383/54b99080-9197-402d-8bc5-5d2200bd6e4e" alt="project_GIF_2" width="250">
+<img src="https://github.com/szymanskidawid/e-commerce-store/assets/17786383/a7754ccf-4a25-48ee-a3d2-359f63871cd4" alt="project_GIF_3" width="250">
 
 # Reflection
 
