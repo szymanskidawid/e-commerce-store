@@ -6,6 +6,8 @@ This is an e-commerce store website that allows to purchase products available i
 Products can be filtered by a category and have available stock that user can purchase at any time. 
 For testing purposes, stock can be refilled using a button.
 
+Back-End for this project can be found in <a href="https://github.com/szymanskidawid/e-commerce-store-backend" target="_blank">e-commerce-store-backend</a> repository.
+
 # Status
 Project has been finished and tested in order to find any small problems that may have gone under the radar.
 
