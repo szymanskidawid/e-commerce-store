@@ -1,5 +1,3 @@
-WIP
-
 # E-Commerce Store
 This is an e-commerce store website that allows to purchase products available in the database.
 
